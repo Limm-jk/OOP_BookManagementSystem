@@ -8,9 +8,15 @@ class Model {
 	std::list<person> personlist;
 
 
-	//메소드
-	//파일에서 값들을 읽어 저장(초기 실행시)
+public:
+	void dataInit() {
+		//파일입출력으로 booklist에 파일의 책데이터를 푸시(초기실행시 1번만 실행)
+		//파일입출력으로 personlist에 파일의 사람데이터를 푸시(초기실행시 1번만 실행)
+	}
+	
+	
 
+	
 	//book 수정, 검색, 삭제
 	//person 수정, 검색, 삭제
 	
