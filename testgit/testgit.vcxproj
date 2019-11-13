@@ -23,6 +23,7 @@
     <ProjectGuid>{DFD03F7F-EA14-40E0-945E-C09637D01A9E}</ProjectGuid>
     <RootNamespace>testgit</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>OOP_termProject</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -123,7 +124,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="소스.cpp" />
+    <ClCompile Include="..\..\..\OOP_TermProject_01\OOP_termProject\Controller.cpp" />
+    <ClCompile Include="..\..\..\OOP_TermProject_01\OOP_termProject\Model.cpp" />
+    <ClCompile Include="..\..\..\OOP_TermProject_01\OOP_termProject\Object.cpp" />
+    <ClCompile Include="..\..\..\OOP_TermProject_01\OOP_termProject\View.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
