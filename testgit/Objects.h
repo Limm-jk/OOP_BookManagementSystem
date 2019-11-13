@@ -9,7 +9,7 @@ class Objects
 								//둘다 list 띄우니까 apppView에서 필요한 클래서 구현해서 같이 쓰면됨
 
 	protected:
-		Objects() {}//생성자
+		
 		~Objects() {}//소멸자
 };
 
