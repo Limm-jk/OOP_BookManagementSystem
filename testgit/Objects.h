@@ -1,7 +1,8 @@
 #pragma once
 class Objects
 {
-	virtual void add() = 0;		//리스트에 객체 추가. person은 ID가 중복되는지 체크하고 예외처리 or 자동으로 ID 부여(정렬해두면 검색에서 속도이득)
+	virtual void add() = 0;		//리스트에 객체 추가. push_front(객체) 로 맨 앞에 넣으면 확인이 용이함.
+								//person은 ID가 중복되는지 체크하고 예외처리 or 자동으로 ID 부여(정렬해두면 검색에서 속도이득)
 	virtual void modify() = 0;	//객체정보수정
 	virtual void del() = 0;		//리스트에서 객체 빼고 링크 이어붙이기
 	virtual void search() = 0;	//person은 ID로(이름중복시 구별 불가)
