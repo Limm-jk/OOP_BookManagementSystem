@@ -12,7 +12,7 @@ private:
 	std::string loaner;
 	std::string date;	//형식은 yy-mm-dd
 	int ISBN;
-	
+
 
 public:
 	//메소드
@@ -61,15 +61,11 @@ class person {
 private:
 	//이름
 	//나이
-	//전화번호
-	//주민번호
 	//이메일
 	//대출권수
 	//대출 날짜
 	std::string name;
 	int age;
-	std::string phoneNumber;
-	std::string residentNumber;
 	std::string email;
 	int loanNumber;
 	std::string loanDate;
@@ -77,8 +73,8 @@ private:
 public:
 	//메소드
 	//생성자로 초기값 설정
-	person(std::string Name, int Age, std::string PhoneNumber, std::string ResidentNumber, std::string Email)
-	:name(Name), age(Age), phoneNumber(PhoneNumber), residentNumber(ResidentNumber), email(Email){
+	person(std::string Name, int Age, std::string Email)
+		:name(Name), age(Age), email(Email) {
 		loanNumber = 0;
 		loanDate = "";
 	}
@@ -89,12 +85,6 @@ public:
 	}
 	int getAge() {
 		return age;
-	}
-	std::string getPhoneNumber() {
-		return phoneNumber;
-	}
-	std::string getResidentNumber() {
-		return residentNumber;
 	}
 	std::string getEmail() {
 		return email;
@@ -112,12 +102,6 @@ public:
 	}
 	void setAge(int Age) {
 		age = Age;
-	}
-	void setPhoneNumber(std::string PhoneNumber) {
-		phoneNumber = PhoneNumber;
-	}
-	void setResidentNumber(std::string ResidentNumber) {
-		residentNumber = ResidentNumber;
 	}
 	void setEmail(std::string Email) {
 		email = Email;
