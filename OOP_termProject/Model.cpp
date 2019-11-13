@@ -6,6 +6,10 @@ class Model {
 	std::list<Book> booklist;
 	//person list선언(링크드리스트 - STL사용)
 	std::list<person> personlist;
+	
+	//이터레이터
+	std::list<Book>::iterator bklistItr = booklist.begin();
+	std::list<person>::iterator pslistItr = personlist.begin();
 
 
 public:
