@@ -22,17 +22,17 @@ public:
 
 
 	//book 수정, 검색, 삭제
-	bool bookInsert(std::string title, std::string author, std::string date, int ISBN) {
-		Book newbook(title, author, date, ISBN);
+	bool bookInsert(std::string title, std::string author, std::string date, int bookNumber) {
+		Book newbook(title, author, date, bookNumber);
 		booklist.push_back(newbook);
 	}
 
 	bool bookSearch(std::string title) {
 		bklistItr = booklist.begin();//초기화
 		while (bklistItr != booklist.end()) {
-			if ((*bklistItr).getBookTitle == title) {
-				return true;
-			}
+//			if ((*bklistItr).getBookTitle == title) {
+//				return true;
+//			}
 			++bklistItr;
 		}
 		bklistItr = booklist.begin();//찾는데 실패 시에 초기화 후 리턴

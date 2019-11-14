@@ -10,15 +10,15 @@ private:
 	std::string bookTitle;
 	std::string author;
 	std::string loaner;
-	std::string date;	//형식은 yy-mm-dd
-	int ISBN;
+	std::string date;	//형식은 yyyy-mm-dd
+	int bookNumber;
 
 
 public:
 	//메소드
 	//생성자로 초기값 설정
-	Book(std::string Title, std::string Author, std::string Date, int isbn)
-		:bookTitle(Title), author(Author), date(Date), ISBN(isbn) {
+	Book(std::string Title, std::string Author, std::string Date, int booknum)
+		:bookTitle(Title), author(Author), date(Date),  bookNumber(booknum) {
 		loaner = "";
 	}
 
@@ -35,8 +35,8 @@ public:
 	std::string getDate() {
 		return date;
 	}
-	int getISBN() {
-		return ISBN;
+	int getbookNumber() {
+		return bookNumber;
 	}
 
 	//setter
@@ -52,8 +52,8 @@ public:
 	void setDate(std::string Date) {
 		date = Date;
 	}
-	void setISBN(int isbn) {
-		ISBN = isbn;
+	void setBookNumber(int booknum) {
+		bookNumber = booknum;
 	}
 };
 
