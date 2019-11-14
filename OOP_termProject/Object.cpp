@@ -33,7 +33,7 @@ public:
 	std::string getPublisher() {
 		return publisher;
 	}
-	int getbookNumber() {
+	int getBookNumber() {
 		return bookNumber;
 	}
 	bool getLoan() {
