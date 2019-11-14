@@ -1,5 +1,5 @@
 #include "View.cpp"
-#include<stdlib.h>
+#include <stdlib.h>
 
 class Controller {
 

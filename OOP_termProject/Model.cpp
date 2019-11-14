@@ -30,17 +30,22 @@ public:
 	bool bookSearch(std::string title) {
 		bklistItr = booklist.begin();//초기화
 		while (bklistItr != booklist.end()) {
-//			if ((*bklistItr).getBookTitle == title) {
-//				return true;
-//			}
+			if ((*bklistItr).getBookTitle() == title) {
+				return true;
+			}
 			++bklistItr;
 		}
 		bklistItr = booklist.begin();//찾는데 실패 시에 초기화 후 리턴
 		return false;
 	}
+	
+	bool bookSearchNum(int bookNum) {
+		bklistItr = booklist.begin();
 
-	bool bookDelete(std::string title) {
-		if (bookSearch(title)) {
+	}
+	
+	bool bookDelete(int bookNumber) {
+		if (bookSearchNum(bookNumber)) {
 			booklist.erase(bklistItr);
 			return true;
 		}
@@ -50,5 +55,4 @@ public:
 	//person 수정, 검색, 삭제
 
 	//파일 업데이트
-	//
 };
