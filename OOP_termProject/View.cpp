@@ -35,9 +35,7 @@ public:
 	}
 
 	//유저로 로그인
-	int userPage() {
-		int input = 0;
-
+	void userPage(int& input) {
 		std::cout << "-------------------------------------------------" << std::endl;
 		std::cout << "" << std::endl;
 		std::cout << "" << std::endl;
@@ -57,7 +55,6 @@ public:
 
 		std::cin >> input;
 		//예외처리 필요
-		return input;
 	}
 
 	void searchBook(std::string& bookTitle) {
@@ -107,7 +104,7 @@ public:
 		std::cin >> bookNumber;
 	}
 
-	void returnBook(std::string& returnId, std::string& returnTitle) {
+	void returnBook(person Person, int& bookNumber) {
 		std::cout << "-------------------------------------------------" << std::endl;
 		std::cout << "" << std::endl;
 		std::cout << "" << std::endl;
@@ -115,7 +112,7 @@ public:
 		std::cout << "" << std::endl;
 		std::cout << "" << std::endl;
 		std::cout << "" << std::endl;
-		std::cout << "2. 도서 반납을 선택하셨습니다." << std::endl;
+		std::cout << Person.getLoanBook1()<<"     "<<Person.getLoanBook2()<<"     "<<Person.getLoanBook3()<< std::endl;
 		std::cout << "" << std::endl;
 		std::cout << "" << std::endl;
 		std::cout << "" << std::endl;
@@ -125,11 +122,11 @@ public:
 		std::cout << "-------------------------------------------------" << std::endl;
 		std::cout << "" << std::endl;
 
-		std::cout << "반납할 책 이름을 입력해주세요 : ";
-		std::cin >> returnTitle;
+		std::cout << "반납할 책의 고유번호를 입력해주세요 : ";
+		std::cin >> bookNumber;
 	}
 
-	int manageBook() {
+	int managePage() {
 		int input;
 		std::cout << "-------------------------------------------------" << std::endl;
 		std::cout << "" << std::endl;
