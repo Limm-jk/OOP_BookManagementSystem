@@ -22,8 +22,8 @@ public:
 
 
 	//book 수정, 검색, 삭제
-	bool bookInsert(std::string title, std::string author, std::string date, int ISBN) {
-		Book newbook(title, author, date, ISBN);
+	bool bookInsert(std::string title, std::string author, std::string date, int bookNumber) {
+		Book newbook(title, author, date, bookNumber);
 		booklist.push_back(newbook);
 	}
 
@@ -38,9 +38,14 @@ public:
 		bklistItr = booklist.begin();//찾는데 실패 시에 초기화 후 리턴
 		return false;
 	}
+	
+	bool bookSearchNum(int bookNum) {
+		bklistItr = booklist.begin();
 
-	bool bookDelete(std::string title) {
-		if (bookSearch(title)) {
+	}
+	
+	bool bookDelete(int bookNumber) {
+		if (bookSearchNum(bookNumber)) {
 			booklist.erase(bklistItr);
 			return true;
 		}
@@ -50,5 +55,4 @@ public:
 	//person 수정, 검색, 삭제
 
 	//파일 업데이트
-	//
 };
