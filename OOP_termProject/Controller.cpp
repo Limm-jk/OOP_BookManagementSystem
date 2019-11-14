@@ -7,6 +7,11 @@ class Controller {
 	View view;
 	int initScreenInput = 0;
 
+	//book list선언(링크드리스트 - STL사용)
+	std::list<Book> booklist;
+	//person list선언(링크드리스트 - STL사용)
+	std::list<person> personlist;
+
 	//대출 id, title
 	std::string loanId;
 	std::string bookTitle;
@@ -14,11 +19,23 @@ class Controller {
 	std::string returnId;
 	std::string returnTitle;
 
+	//회원추가
+	std::string name;
+	std::string id;
+	std::string passwd;
+
+	int loanNumber;
+	std::string loanBook1;
+	std::string loanBook2;
+	std::string loanBook3;
+
 	//도서 추가
-	std::string addBookTitle;
-	std::string addAuthor;
-	std::string addDate;
-	int addBookNumber;
+	std::string addbookTitle;
+	std::string addauthor;
+	std::string addpublisher;
+	int addbookNumber;
+	//대출자
+	bool addloan;
 
 	//도서 삭제
 	int delBookNumber;
@@ -26,6 +43,16 @@ class Controller {
 	//도서 검색
 	std::string searchBookTitle;
 
+	void addbook(std::string& addbookTitle, std::string& addauthor, std::string& addpublisher, int& addbookNumber) {
+		view.addBook(addbookTitle, addauthor, addpublisher, addbookNumber);
+		Book newbook(addbookTitle, addauthor, addpublisher, addbookNumber);
+		booklist.push_back(newbook);
+	}
+	void addPerson(std::string& name, std::string& id, std::string& passwd) {
+		view.addPerson(name, id, passwd);
+		person newPerson(name, id, passwd);
+		personlist.push_back(newPerson);
+	}
 public:
 	void run() {
 
@@ -50,7 +77,7 @@ public:
 			int manageBookInput = view.manageBook();	//도서 관리 화면
 			if (manageBookInput == 1) {				//도서 추가
 				system("cls");
-				view.addBook(addBookTitle, addAuthor, addDate, addBookNumber);
+				//view.addBook(addBookTitle, addAuthor, addDate, addBookNumber);
 			}
 			else if (manageBookInput == 2) {		//도서 삭제
 				system("cls");
