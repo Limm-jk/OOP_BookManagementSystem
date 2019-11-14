@@ -90,33 +90,45 @@ public:
 	std::string getName() {
 		return name;
 	}
-	int getAge() {
-		return age;
+	std::string getId() {
+		return id;
 	}
-	std::string getEmail() {
-		return email;
+	std::string getPasswd() {
+		return passwd;
 	}
 	int getLoanNumber() {
 		return loanNumber;
 	}
-	std::string getLoanDate() {
-		return loanDate;
+	std::string getLoanBook1() {
+		return loanBook1;
+	}
+	std::string getLoanBook2() {
+		return loanBook2;
+	}
+	std::string getLoanBook3() {
+		return loanBook3;
 	}
 
 	//setter
 	void setName(std::string Name) {
 		name = Name;
 	}
-	void setAge(int Age) {
-		age = Age;
+	void setId(std::string Id) {
+		id = Id;
 	}
-	void setEmail(std::string Email) {
-		email = Email;
+	void setPasswd(std::string Passwd) {
+		passwd = Passwd;
 	}
 	void setLoanNumber(int LoanNumber) {
 		loanNumber = LoanNumber;
 	}
-	void setLoanDate(std::string date) {
-		loanDate = date;
+	void setLoanBook1(std::string LoanBook1) {
+		loanBook1 = LoanBook1;
+	}
+	void setLoanBook2(std::string LoanBook2) {
+		loanBook2 = LoanBook2;
+	}
+	void setLoanBook2(std::string LoanBook2) {
+		loanBook2 = LoanBook2;
 	}
 };
