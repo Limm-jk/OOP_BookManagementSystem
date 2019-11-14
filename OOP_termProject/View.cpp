@@ -189,10 +189,7 @@ public:
 		std::cout << "" << std::endl;
 		std::cout << "" << std::endl;
 		std::cout << "" << std::endl;
-		std::cout << "" << std::endl;+
-			++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-
+		std::cout << "" << std::endl;
 
 		std::cout << "2. 도서 삭제를 선택하셨습니다." << std::endl;
 		std::cout << "" << std::endl;
