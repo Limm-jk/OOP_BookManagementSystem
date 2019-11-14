@@ -27,7 +27,7 @@ public:
 
 		std::cin >> input;
 
-		return inpust;
+		return input;
 	}
 
 	int LoanReturn() {
