@@ -4,23 +4,24 @@ class Book {
 private:
 	//제목
 	//저자
-	//출시년도
-	//대출자 (초기값 미대출)
+	//출판사
 	//책 고유번호
+	//대출 여부
 	std::string bookTitle;
 	std::string author;
-	std::string loaner;
-	std::string date;	//형식은 yyyy-mm-dd
+	std::string publisher;
 	int bookNumber;
-
+	bool loan;
 
 public:
 	//메소드
 	//생성자로 초기값 설정
-	Book(std::string Title, std::string Author, std::string Date, int booknum)
-		:bookTitle(Title), author(Author), date(Date),  bookNumber(booknum) {
-		loaner = "";
+	Book(std::string Title, std::string Author, std::string Publisher, int BookNumber)
+	:bookTitle(Title), author(Author), publisher(Publisher), bookNumber(BookNumber){
+		loan = false;
 	}
+
+	~Book() {}
 
 	//getter
 	std::string getBookTitle() {
@@ -29,16 +30,15 @@ public:
 	std::string getAuthor() {
 		return author;
 	}
-	std::string getLoaner() {
-		return loaner;
-	}
-	std::string getDate() {
-		return date;
+	std::string getPublisher() {
+		return publisher;
 	}
 	int getbookNumber() {
 		return bookNumber;
 	}
-
+	bool getLoan() {
+		return loan;
+	}
 	//setter
 	void setBookTitle(std::string Title) {
 		bookTitle = Title;
@@ -46,37 +46,44 @@ public:
 	void setAuthor(std::string Author) {
 		author = Author;
 	}
-	void setLoaner(std::string Loaner) {
-		loaner = Loaner;
-	}
-	void setDate(std::string Date) {
-		date = Date;
+	void setPublisher(std::string Publisher) {
+		publisher = Publisher;
 	}
 	void setBookNumber(int booknum) {
 		bookNumber = booknum;
+	}
+	void setLoan(bool Loan) {
+		loan = Loan;
 	}
 };
 
 class person {
 private:
 	//이름
-	//나이
-	//이메일
+	//아이디
+	//패스워드
 	//대출권수
-	//대출 날짜
+	//대출 책1
+	//대출 책2
+	//대출 책3
+
 	std::string name;
-	int age;
-	std::string email;
+	std::string id;
+	std::string passwd;
 	int loanNumber;
-	std::string loanDate;
+	std::string loanBook1;
+	std::string loanBook2;
+	std::string loanBook3;
 
 public:
 	//메소드
 	//생성자로 초기값 설정
-	person(std::string Name, int Age, std::string Email)
-		:name(Name), age(Age), email(Email) {
+	person(std::string Name, std::string Id, std::string Passwd) 
+	:name(Name), id(Id), passwd(Passwd){
 		loanNumber = 0;
-		loanDate = "";
+		loanBook1 = "";
+		loanBook2 = "";
+		loanBook3 = "";
 	}
 
 	//getter

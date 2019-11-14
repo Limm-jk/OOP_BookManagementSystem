@@ -1,4 +1,5 @@
 #include "View.cpp"
+#include "Model.cpp"
 #include <stdlib.h>
 
 class Controller {

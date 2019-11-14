@@ -27,7 +27,8 @@ public:
 		booklist.push_back(newbook);
 	}
 
-	bool bookSearch(std::string title) {
+	std::list<Book> bookSearch(std::string title) {
+		
 		bklistItr = booklist.begin();//√ ±‚»≠
 		while (bklistItr != booklist.end()) {
 			if ((*bklistItr).getBookTitle() == title) {
@@ -43,7 +44,7 @@ public:
 		bklistItr = booklist.begin();
 
 	}
-	
+	                                       
 	bool bookDelete(int bookNumber) {
 		if (bookSearchNum(bookNumber)) {
 			booklist.erase(bklistItr);
