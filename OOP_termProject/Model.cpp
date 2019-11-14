@@ -27,8 +27,23 @@ public:
 		booklist.push_back(newbook);
 	}
 
-	std::list<Book> bookSearch(std::string title) {
-		
+	std::list<Book> bookSearch(std::list<Book> givenList, int givenBookNumber) {
+		std::list<Book> aList;
+		for (std::list<Book>::iterator iterPos = givenList.begin(); iterPos != givenList.end; ++iterPos)
+		{
+			if((*iterPos).getBookNumber() == givenBookNumber) {//주어진 것과 같은 책번호를 갖는 객체를 가리킬 때 작동
+				Book abook((*iterPos).getBookTitle, (*iterPos).getAuthor, (*iterPos).getPublisher, (*iterPos).getBookNumber);//가리키는 객체를 복사
+				abook.setLoan((*iterPos).getLoan);
+				aList.push_back(abook);//반환할 리스트에 붙여넣기
+			}
+		}
+		return aList;//리스트 반환
+
+
+	}
+	/*
+	std::list<Book> bookSearch(std::string title  ) {
+
 		bklistItr = booklist.begin();//초기화
 		while (bklistItr != booklist.end()) {
 			if ((*bklistItr).getBookTitle() == title) {
@@ -39,7 +54,8 @@ public:
 		bklistItr = booklist.begin();//찾는데 실패 시에 초기화 후 리턴
 		return false;
 	}
-	
+	*/
+
 	bool bookSearchNum(int bookNum) {
 		bklistItr = booklist.begin();
 
