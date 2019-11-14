@@ -5,6 +5,30 @@ class View {
 
 public:
 	//초기 UI를 보여주는 메소드
+	void login(std::string& returnId, std::string& returnpw) {
+		std::cout << "-------------------------------------------------" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "-- 도서 관리 시스템입니다.--" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "-------------------------------------------------" << std::endl;
+		std::cout << "" << std::endl;
+
+		std::cout << "ID를 입력해 주세요 : ";
+		std::cin >> returnId;
+		std::cout << "Password를 입력해주세요 : ";
+		std::cin >> returnpw;
+	}
+
 	int initScreen() {
 		int input;
 
@@ -29,7 +53,6 @@ public:
 
 		return input;
 	}
-
 	int LoanReturn() {
 		int input = 0;
 
@@ -104,4 +127,7 @@ public:
 		std::cin >> returnTitle;
 	}
 
+	void inputError() {
+		std::cout << "\n\n\n 잘못된 입력입니다. \n\n\n" <<std::endl;
+	}
 };

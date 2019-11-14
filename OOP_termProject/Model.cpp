@@ -30,7 +30,7 @@ public:
 	bool bookSearch(std::string title) {
 		bklistItr = booklist.begin();//√ ±‚»≠
 		while (bklistItr != booklist.end()) {
-			if ((*bklistItr).getBookTitle == title) {
+			if ((*bklistItr).getBookTitle() == title) {
 				return true;
 			}
 			++bklistItr;
