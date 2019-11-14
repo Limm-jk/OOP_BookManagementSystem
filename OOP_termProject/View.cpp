@@ -207,4 +207,26 @@ public:
 		std::cout << "검색할 도서의 제목을 입력해 주세요 : ";
 		std::cin >> bookTitle;
 	}
+
+	void addBook(std::string& bookTitle, std::string& author, std::string& publisher, int& bookN ) {
+
+		std::cout << "추가할 도서의 제목을 입력해 주세요 : ";
+		std::cin >> bookTitle;
+		std::cout << "추가할 도서의 작가를 입력해 주세요 : ";
+		std::cin >> author;
+		std::cout << "추가할 도서의 출판사를 입력해 주세요 : ";
+		std::cin >> publisher;
+		std::cout << "추가할 도서의 책번호를 입력해 주세요 : ";
+		std::cin >> bookN;
+	}
+
+	void addPerson(std::string& name, std::string& id, std::string& pwd) {
+
+		std::cout << "추가할 회원의 이름을 입력해 주세요 : ";
+		std::cin >> name;
+		std::cout << "추가할 회원의 ID를 입력해 주세요 : ";
+		std::cin >> id;
+		std::cout << "추가할 회원의 비밀번호를 입력해 주세요 : ";
+		std::cin >> pwd;
+	}
 };
