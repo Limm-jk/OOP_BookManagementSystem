@@ -6,19 +6,18 @@ class Controller {
 
 	View view;
 	int initScreenInput = 0;
-
+	std::string SUPERUSER = "admin";
 	//book list선언(링크드리스트 - STL사용)
 	std::list<Book> booklist;
 	//person list선언(링크드리스트 - STL사용)
 	std::list<person> personlist;
 
-	//대출 id, title
-	std::string loanId;
-	std::string bookTitle;
-	//반납 id, title
-	std::string returnId;
-	std::string returnTitle;
+	//로그인
+	std::string returnid;
+	std::string returnpasswd;
 
+	//검색 책 이름
+	std::string returntitle;
 	//회원추가
 	std::string name;
 	std::string id;
@@ -57,41 +56,21 @@ public:
 	void run() {
 
 		system("cls");
-		initScreenInput = view.initScreen();	//초기화면
-		if (initScreenInput == 1) {				//초기화면의 입력값이 도서대출,반납 선택
-			int LoanReturnInput = 0;			
-			system("cls");
-			LoanReturnInput = view.LoanReturn();	//도서 대출 반납 화면
-			if (LoanReturnInput == 1) {				//대출
-				system("cls");
-				view.loanBook(loanId, bookTitle);
+		view.initScreen(returnid, returnpasswd);	//초기화면
+		//회원 유효 및 마스터계정 확인
+
+		//회원계정일때
+		int i = view.userPage();
+		while (i != 0) {
+			if (i == 1) {
+				view.searchBook(returntitle);
+				//검색메소드
 			}
-			else if (LoanReturnInput == 2) {		//반납
-				system("cls");
-				view.returnBook(returnId, returnTitle);
+			if (i == 2) {
+				//반납메소드
 			}
-		
-		}
-		else if (initScreenInput == 2) {		//초기 화면에서 도서관리 선택
-			system("cls");
-			int manageBookInput = view.manageBook();	//도서 관리 화면
-			if (manageBookInput == 1) {				//도서 추가
-				system("cls");
-				//view.addBook(addBookTitle, addAuthor, addDate, addBookNumber);
-			}
-			else if (manageBookInput == 2) {		//도서 삭제
-				system("cls");
-				view.deleteBook(delBookNumber);
-			}
-			else if (manageBookInput == 3) {		//도서 검색
-				system("cls");
-				view.searchBook(searchBookTitle);
-			}
-		}
-		else if (initScreenInput == 3) {		//초기 화면에서 회원관리 선택
 
 		}
-
 	}
 };
 
