@@ -5,7 +5,6 @@
 class Controller {
 
 	View view;
-	int initScreenInput = 0;
 	std::string SUPERUSER = "admin";
 	//book list선언(링크드리스트 - STL사용)
 	std::list<Book> booklist;
