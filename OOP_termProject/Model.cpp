@@ -6,7 +6,7 @@ class Model {
 	std::list<Book> booklist;
 	//person list선언(링크드리스트 - STL사용)
 	std::list<person> personlist;
-	
+
 	//이터레이터
 	std::list<Book>::iterator bklistItr = booklist.begin();
 	std::list<person>::iterator pslistItr = personlist.begin();
@@ -18,20 +18,17 @@ public:
 		//파일입출력으로 personlist에 파일의 사람데이터를 푸시(초기실행시 1번만 실행)
 	}
 
-
-
-
 	//book 수정, 검색, 삭제
-	bool bookInsert(std::string title, std::string author, std::string date, int bookNumber) {
-		Book newbook(title, author, date, bookNumber);
+	void bookInsert(std::string& addbookTitle, std::string& addauthor, std::string& addpublisher, int& addbookNumber) {
+		Book newbook(addbookTitle, addauthor, addpublisher, addbookNumber);
 		booklist.push_back(newbook);
 	}
 
-	std::list<Book> bookSearch(std::list<Book> givenList, int givenBookNumber) {
+	std::list<Book> bookSearch(std::list<Book> bookList, int givenBookNumber) {
 		std::list<Book> aList;
-		for (std::list<Book>::iterator iterPos = givenList.begin(); iterPos != givenList.end; ++iterPos)
+		for (std::list<Book>::iterator iterPos = bookList.begin(); iterPos != bookList.end(); ++iterPos)
 		{
-			if((*iterPos).getBookNumber() == givenBookNumber) {//주어진 것과 같은 책번호를 갖는 객체를 가리킬 때 작동
+			if ((*iterPos).getBookNumber() == givenBookNumber) {//주어진 것과 같은 책번호를 갖는 객체를 가리킬 때 작동
 				Book abook((*iterPos).getBookTitle, (*iterPos).getAuthor, (*iterPos).getPublisher, (*iterPos).getBookNumber);//가리키는 객체를 복사
 				abook.setLoan((*iterPos).getLoan);
 				aList.push_back(abook);//반환할 리스트에 붙여넣기
@@ -60,7 +57,7 @@ public:
 		bklistItr = booklist.begin();
 
 	}
-	                                       
+
 	bool bookDelete(int bookNumber) {
 		if (bookSearchNum(bookNumber)) {
 			booklist.erase(bklistItr);
@@ -70,6 +67,8 @@ public:
 	}
 
 	//person 수정, 검색, 삭제
+
+
 
 	//파일 업데이트
 };
