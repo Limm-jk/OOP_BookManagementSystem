@@ -1,6 +1,6 @@
 #include<list>
 #include"Object.cpp"
-
+//바뀜
 class Model {
 	//book list선언(링크드리스트 - STL사용)
 	std::list<Book> booklist;
