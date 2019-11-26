@@ -18,12 +18,9 @@ public:
 		//파일입출력으로 personlist에 파일의 사람데이터를 푸시(초기실행시 1번만 실행)
 	}
 
-
-
-
 	//book 수정, 검색, 삭제
-	bool bookInsert(std::string title, std::string author, std::string date, int bookNumber) {
-		Book newbook(title, author, date, bookNumber);
+	void bookInsert(std::string& addbookTitle, std::string& addauthor, std::string& addpublisher, int& addbookNumber) {
+		Book newbook(addbookTitle, addauthor, addpublisher, addbookNumber);
 		booklist.push_back(newbook);
 	}
 
@@ -70,6 +67,8 @@ public:
 	}
 
 	//person 수정, 검색, 삭제
+
+
 
 	//파일 업데이트
 };
