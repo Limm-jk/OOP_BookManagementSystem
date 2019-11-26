@@ -24,7 +24,7 @@ public:
 		booklist.push_back(newbook);
 	}
 
-	std::list<Book> bookSearch(std::list<Book> bookList, int givenBookNumber) {
+	std::list<Book> bookSearch(int givenBookNumber) {
 		std::list<Book> aList;
 		for (std::list<Book>::iterator iterPos = bookList.begin(); iterPos != bookList.end(); ++iterPos)
 		{
