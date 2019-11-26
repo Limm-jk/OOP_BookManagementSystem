@@ -33,6 +33,7 @@ private:
 	std::string addauthor;
 	std::string addpublisher;
 	int addbookNumber;
+
 	//´ëÃâÀÚ
 	bool addloan;
 

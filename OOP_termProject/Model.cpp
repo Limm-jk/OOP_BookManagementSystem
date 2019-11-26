@@ -35,8 +35,6 @@ public:
 			}
 		}
 		return aList;//리스트 반환
-
-
 	}
 	/*
 	std::list<Book> bookSearch(std::string title  ) {
@@ -64,6 +62,23 @@ public:
 			return true;
 		}
 		return false;
+	}
+	
+	bool bookLoan(std::string id, int bookNumber) {
+		bklistItr = booklist.begin();
+		while (bklistItr != booklist.end()) {
+			if ((*bklistItr).getBookNumber() == bookNumber) {
+				(*bklistItr).setLoan(true);
+				return true;
+			}
+		}
+
+		return false;
+	}
+
+	// 반납
+	bool bookReturn(std::string id, int bookNumber) {
+
 	}
 
 	//person 수정, 검색, 삭제
