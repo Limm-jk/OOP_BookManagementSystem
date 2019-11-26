@@ -10,7 +10,7 @@ public:
 
 	//로그인 페이지
 	void initScreen(std::string& Id, std::string& passwd) {
-		
+
 		std::cout << "-------------------------------------------------" << std::endl;
 		std::cout << "" << std::endl;
 		std::cout << "" << std::endl;
@@ -74,7 +74,7 @@ public:
 		std::cout << "" << std::endl;
 		std::cout << "-------------------------------------------------" << std::endl;
 		std::cout << "" << std::endl;
-		
+
 		std::cout << "검색할 책을 입력해 주세요 : ";
 		std::cin >> bookTitle;
 	}
@@ -99,7 +99,7 @@ public:
 		std::cout << "" << std::endl;
 		std::cout << "-------------------------------------------------" << std::endl;
 		std::cout << "" << std::endl;
-		
+
 		std::cout << "대출할 책의 고유번호를 입력해 주세요 : ";
 		std::cin >> bookNumber;
 	}
@@ -112,7 +112,7 @@ public:
 		std::cout << "" << std::endl;
 		std::cout << "" << std::endl;
 		std::cout << "" << std::endl;
-		std::cout << Person.getLoanBook1()<<"     "<<Person.getLoanBook2()<<"     "<<Person.getLoanBook3()<< std::endl;
+		std::cout << Person.getLoanBook1() << "     " << Person.getLoanBook2() << "     " << Person.getLoanBook3() << std::endl;
 		std::cout << "" << std::endl;
 		std::cout << "" << std::endl;
 		std::cout << "" << std::endl;
@@ -126,17 +126,17 @@ public:
 		std::cin >> bookNumber;
 	}
 
-	int managePage() {
-		int input;
+
+	void managePage(int& input) {
 		std::cout << "-------------------------------------------------" << std::endl;
 		std::cout << "" << std::endl;
 		std::cout << "" << std::endl;
 		std::cout << "" << std::endl;
 		std::cout << "" << std::endl;
 		std::cout << "" << std::endl;
-		std::cout << "1. 도서 추가" << std::endl;
-		std::cout << "2. 도서 삭제" << std::endl;
-		std::cout << "3. 도서 검색" << std::endl;
+		std::cout << "1. 도서 관리" << std::endl;
+		std::cout << "2. 회원 관리" << std::endl;
+		std::cout << "" << std::endl;
 		std::cout << "" << std::endl;
 		std::cout << "" << std::endl;
 		std::cout << "" << std::endl;
@@ -144,13 +144,17 @@ public:
 		std::cout << "" << std::endl;
 		std::cout << "-------------------------------------------------" << std::endl;
 		std::cout << "" << std::endl;
-		
+
 		std::cin >> input;
-		return input;
 	}
 
 
-	void addBook(std::string& bookTitle, std::string& author, std::string& publisher, int& bookN ) {
+
+
+
+
+
+	void addBook(std::string& bookTitle, std::string& author, std::string& publisher, int& bookN) {
 
 		std::cout << "추가할 도서의 제목을 입력해 주세요 : ";
 		std::cin >> bookTitle;
