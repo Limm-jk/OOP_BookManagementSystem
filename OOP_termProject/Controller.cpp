@@ -6,12 +6,13 @@ class Controller {
 
 	View view;
 	std::string SUPERUSER = "admin";
+	std::string SUPERUSERPW;
 	//book list선언(링크드리스트 - STL사용)
 	std::list<Book> booklist;
 	//person list선언(링크드리스트 - STL사용)
 	std::list<person> personlist;
 
-	//로그인
+	//로그인(초기화면)
 	std::string returnid;
 	std::string returnpasswd;
 
@@ -32,6 +33,7 @@ class Controller {
 	std::string addauthor;
 	std::string addpublisher;
 	int addbookNumber;
+
 	//대출자
 	bool addloan;
 

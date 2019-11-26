@@ -126,17 +126,17 @@ public:
 		std::cin >> bookNumber;
 	}
 
-	int managePage() {
-		int input;
+
+	void managePage(int& input) {
 		std::cout << "-------------------------------------------------" << std::endl;
 		std::cout << "" << std::endl;
 		std::cout << "" << std::endl;
 		std::cout << "" << std::endl;
 		std::cout << "" << std::endl;
 		std::cout << "" << std::endl;
-		std::cout << "1. 도서 추가" << std::endl;
-		std::cout << "2. 도서 삭제" << std::endl;
-		std::cout << "3. 도서 검색" << std::endl;
+		std::cout << "1. 도서 관리" << std::endl;
+		std::cout << "2. 회원 관리" << std::endl;
+		std::cout << "" << std::endl;
 		std::cout << "" << std::endl;
 		std::cout << "" << std::endl;
 		std::cout << "" << std::endl;
@@ -146,8 +146,12 @@ public:
 		std::cout << "" << std::endl;
 		
 		std::cin >> input;
-		return input;
 	}
+
+	
+
+	
+
 
 
 	void addBook(std::string& bookTitle, std::string& author, std::string& publisher, int& bookN ) {
