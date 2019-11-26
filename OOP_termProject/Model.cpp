@@ -26,9 +26,9 @@ public:
 
 	std::list<Book> bookSearch(std::list<Book> bookList, int givenBookNumber) {
 		std::list<Book> aList;
-		for (std::list<Book>::iterator iterPos = givenList.begin(); iterPos != givenList.end; ++iterPos)
+		for (std::list<Book>::iterator iterPos = bookList.begin(); iterPos != bookList.end; ++iterPos)
 		{
-			if((*iterPos).getBookNumber() == givenBookNumber) {//주어진 것과 같은 책번호를 갖는 객체를 가리킬 때 작동
+			if((*iterPos).getBookNumber() == bookBookNumber) {//주어진 것과 같은 책번호를 갖는 객체를 가리킬 때 작동
 				Book abook((*iterPos).getBookTitle, (*iterPos).getAuthor, (*iterPos).getPublisher, (*iterPos).getBookNumber);//가리키는 객체를 복사
 				abook.setLoan((*iterPos).getLoan);
 				aList.push_back(abook);//반환할 리스트에 붙여넣기
