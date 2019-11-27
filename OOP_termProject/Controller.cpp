@@ -5,19 +5,23 @@
 class Controller {
 
 	View view;
-	int initScreenInput = 0;
+
 	std::string SUPERUSER = "admin";
+	std::string SUPERUSERPW;
 	//book list선언(링크드리스트 - STL사용)
 	std::list<Book> booklist;
 	//person list선언(링크드리스트 - STL사용)
 	std::list<person> personlist;
 
-	//로그인
+	//로그인(초기화면)
 	std::string returnid;
 	std::string returnpasswd;
 
-	//검색 책 이름
+	int scanSignal;//번호입력시 번호저장 변수
+
+	//검색 입력받은 책 이름
 	std::string returntitle;
+
 	//회원추가
 	std::string name;
 	std::string id;
@@ -33,6 +37,7 @@ class Controller {
 	std::string addauthor;
 	std::string addpublisher;
 	int addbookNumber;
+
 	//대출자
 	bool addloan;
 
@@ -60,13 +65,13 @@ public:
 		//회원 유효 및 마스터계정 확인
 
 		//회원계정일때
-		int i = view.userPage();
-		while (i != 0) {
-			if (i == 1) {
-				view.searchBook(returntitle);
+		view.userPage(scanSignal);//시그널 확인
+		while (scanSignal != 0) {
+			if (scanSignal == 1) {
+				view.searchBook(returntitle);//책이름 입력
 				//검색메소드
 			}
-			if (i == 2) {
+			if (scanSignal == 2) {
 				//반납메소드
 			}
 
