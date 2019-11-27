@@ -1,4 +1,72 @@
-﻿  Controller.cpp
+﻿  Object.cpp
+C:\Users\songkey\Desktop\oop\OOP_TermProject_01\OOP_termProject\Object.cpp(131,43): error C2535:  'void person::setLoanBook2(std::string)': 멤버 함수를 이미 정의했거나 선언했습니다.
+  Controller.cpp
+C:\Users\songkey\Desktop\oop\OOP_TermProject_01\OOP_termProject\Object.cpp(128): message :  'person::setLoanBook2' 선언을 참조하십시오.
+C:\Users\songkey\Desktop\oop\OOP_TermProject_01\OOP_termProject\Object.cpp(131,43): error C2535:  'void person::setLoanBook2(std::string)': 멤버 함수를 이미 정의했거나 선언했습니다.
+C:\Users\songkey\Desktop\oop\OOP_TermProject_01\OOP_termProject\Object.cpp(128): message :  'person::setLoanBook2' 선언을 참조하십시오.
+C:\Users\songkey\Desktop\oop\OOP_TermProject_01\OOP_termProject\Object.cpp(3,12): error C2011:  'Book': 'class' 형식 재정의
+C:\Users\songkey\Desktop\oop\OOP_TermProject_01\OOP_termProject\Object.cpp(3): message :  'Book' 선언을 참조하십시오.
+C:\Users\songkey\Desktop\oop\OOP_TermProject_01\OOP_termProject\Object.cpp(60,14): error C2011:  'person': 'class' 형식 재정의
+C:\Users\songkey\Desktop\oop\OOP_TermProject_01\OOP_termProject\Object.cpp(60): message :  'person' 선언을 참조하십시오.
+C:\Users\songkey\Desktop\oop\OOP_TermProject_01\OOP_termProject\Model.cpp(23,1): error C2079:  'newbook'은(는) 정의되지 않은 class 'Book'을(를) 사용합니다.
+C:\Users\songkey\Desktop\oop\OOP_TermProject_01\OOP_termProject\Model.cpp(23,1): error C2440:  '초기화 중': 'initializer list'에서 'int'(으)로 변환할 수 없습니다.
+C:\Users\songkey\Desktop\oop\OOP_TermProject_01\OOP_termProject\Model.cpp(23,15): message :  이니셜라이저에 요소가 너무 많습니다.
+C:\Users\songkey\Desktop\oop\OOP_TermProject_01\OOP_termProject\Model.cpp(24,1): error C2664:  'void std::list<Book,std::allocator<_Ty>>::push_back(const _Ty &)': 인수 1을(를) 'int'에서 '_Ty &&'(으)로 변환할 수 없습니다.
+C:\Users\songkey\Desktop\oop\OOP_TermProject_01\OOP_termProject\Model.cpp(24,1): error C2664:         with
+C:\Users\songkey\Desktop\oop\OOP_TermProject_01\OOP_termProject\Model.cpp(24,1): error C2664:         [
+C:\Users\songkey\Desktop\oop\OOP_TermProject_01\OOP_termProject\Model.cpp(24,1): error C2664:             _Ty=Book
+C:\Users\songkey\Desktop\oop\OOP_TermProject_01\OOP_termProject\Model.cpp(24,1): error C2664:         ]
+C:\Users\songkey\Desktop\oop\OOP_TermProject_01\OOP_termProject\Model.cpp(24,1): message :  원인: 'int'에서 '_Ty'(으)로 변환할 수 없습니다.
+C:\Users\songkey\Desktop\oop\OOP_TermProject_01\OOP_termProject\Model.cpp(24,1): message :         with
+C:\Users\songkey\Desktop\oop\OOP_TermProject_01\OOP_termProject\Model.cpp(24,1): message :         [
+C:\Users\songkey\Desktop\oop\OOP_TermProject_01\OOP_termProject\Model.cpp(24,1): message :             _Ty=Book
+C:\Users\songkey\Desktop\oop\OOP_TermProject_01\OOP_termProject\Model.cpp(24,1): message :         ]
+C:\Users\songkey\Desktop\oop\OOP_TermProject_01\OOP_termProject\Model.cpp(24,1): message :  정의되지 않은 형식 'Book'을(를) 사용했습니다.
+C:\Users\songkey\Desktop\oop\OOP_TermProject_01\OOP_termProject\Object.cpp(3,7): message :  'Book' 선언을 참조하십시오.
+C:\Users\songkey\Desktop\oop\OOP_TermProject_01\OOP_termProject\Model.cpp(29,44): error C2065:  'bookList': 선언되지 않은 식별자입니다.
+C:\Users\songkey\Desktop\oop\OOP_TermProject_01\OOP_termProject\Model.cpp(29,73): error C2065:  'bookList': 선언되지 않은 식별자입니다.
+C:\Users\songkey\Desktop\oop\OOP_TermProject_01\OOP_termProject\Model.cpp(31,1): error C2027:  정의되지 않은 형식 'Book'을(를) 사용했습니다.
+C:\Users\songkey\Desktop\oop\OOP_TermProject_01\OOP_termProject\Object.cpp(3): message :  'Book' 선언을 참조하십시오.
+C:\Users\songkey\Desktop\oop\OOP_TermProject_01\OOP_termProject\Model.cpp(32,1): error C2027:  정의되지 않은 형식 'Book'을(를) 사용했습니다.
+C:\Users\songkey\Desktop\oop\OOP_TermProject_01\OOP_termProject\Object.cpp(3): message :  'Book' 선언을 참조하십시오.
+C:\Users\songkey\Desktop\oop\OOP_TermProject_01\OOP_termProject\Model.cpp(32,1): error C2079:  'abook'은(는) 정의되지 않은 class 'Book'을(를) 사용합니다.
+C:\Users\songkey\Desktop\oop\OOP_TermProject_01\OOP_termProject\Model.cpp(33,1): error C2027:  정의되지 않은 형식 'Book'을(를) 사용했습니다.
+C:\Users\songkey\Desktop\oop\OOP_TermProject_01\OOP_termProject\Object.cpp(3): message :  'Book' 선언을 참조하십시오.
+C:\Users\songkey\Desktop\oop\OOP_TermProject_01\OOP_termProject\Model.cpp(34,1): error C2664:  'void std::list<Book,std::allocator<_Ty>>::push_back(const _Ty &)': 인수 1을(를) 'int'에서 '_Ty &&'(으)로 변환할 수 없습니다.
+C:\Users\songkey\Desktop\oop\OOP_TermProject_01\OOP_termProject\Model.cpp(34,1): error C2664:         with
+C:\Users\songkey\Desktop\oop\OOP_TermProject_01\OOP_termProject\Model.cpp(34,1): error C2664:         [
+C:\Users\songkey\Desktop\oop\OOP_TermProject_01\OOP_termProject\Model.cpp(34,1): error C2664:             _Ty=Book
+C:\Users\songkey\Desktop\oop\OOP_TermProject_01\OOP_termProject\Model.cpp(34,1): error C2664:         ]
+C:\Users\songkey\Desktop\oop\OOP_TermProject_01\OOP_termProject\Model.cpp(34,1): message :  원인: 'int'에서 '_Ty'(으)로 변환할 수 없습니다.
+C:\Users\songkey\Desktop\oop\OOP_TermProject_01\OOP_termProject\Model.cpp(34,1): message :         with
+C:\Users\songkey\Desktop\oop\OOP_TermProject_01\OOP_termProject\Model.cpp(34,1): message :         [
+C:\Users\songkey\Desktop\oop\OOP_TermProject_01\OOP_termProject\Model.cpp(34,1): message :             _Ty=Book
+C:\Users\songkey\Desktop\oop\OOP_TermProject_01\OOP_termProject\Model.cpp(34,1): message :         ]
+C:\Users\songkey\Desktop\oop\OOP_TermProject_01\OOP_termProject\Model.cpp(34,1): message :  정의되지 않은 형식 'Book'을(를) 사용했습니다.
+C:\Users\songkey\Desktop\oop\OOP_TermProject_01\OOP_termProject\Object.cpp(3,7): message :  'Book' 선언을 참조하십시오.
+C:\Users\songkey\Desktop\oop\OOP_TermProject_01\OOP_termProject\Controller.cpp(16,16): error C2079:  'Controller::handler'은(는) 정의되지 않은 class 'person'을(를) 사용합니다.
+C:\Users\songkey\Desktop\oop\OOP_TermProject_01\OOP_termProject\Controller.cpp(58,1): error C2079:  'newPerson'은(는) 정의되지 않은 class 'person'을(를) 사용합니다.
+C:\Users\songkey\Desktop\oop\OOP_TermProject_01\OOP_termProject\Controller.cpp(58,1): error C2440:  '초기화 중': 'initializer list'에서 'int'(으)로 변환할 수 없습니다.
+C:\Users\songkey\Desktop\oop\OOP_TermProject_01\OOP_termProject\Controller.cpp(58,19): message :  이니셜라이저에 요소가 너무 많습니다.
+C:\Users\songkey\Desktop\oop\OOP_TermProject_01\OOP_termProject\Controller.cpp(66,1): error C2440:  '초기화 중': 'void'에서 'bool'(으)로 변환할 수 없습니다.
+C:\Users\songkey\Desktop\oop\OOP_TermProject_01\OOP_termProject\Controller.cpp(66,15): message :  void 형식의 식을 다른 형식으로 변환할 수 없습니다.
+C:\Users\songkey\Desktop\oop\OOP_TermProject_01\OOP_termProject\Controller.cpp(82,1): error C2664:  'void View::returnBook(void)': 인수 1을(를) 'int'에서 'person'(으)로 변환할 수 없습니다.
+C:\Users\songkey\Desktop\oop\OOP_TermProject_01\OOP_termProject\Controller.cpp(82,1): message :  정의되지 않은 형식 'person'을(를) 사용했습니다.
+  Model.cpp
+C:\Users\songkey\Desktop\oop\OOP_TermProject_01\OOP_termProject\Object.cpp(60,7): message :  'person' 선언을 참조하십시오.
+C:\Users\songkey\Desktop\oop\OOP_TermProject_01\OOP_termProject\Object.cpp(131,43): error C2535:  'void person::setLoanBook2(std::string)': 멤버 함수를 이미 정의했거나 선언했습니다.
+C:\Users\songkey\Desktop\oop\OOP_TermProject_01\OOP_termProject\Object.cpp(128): message :  'person::setLoanBook2' 선언을 참조하십시오.
+C:\Users\songkey\Desktop\oop\OOP_TermProject_01\OOP_termProject\Model.cpp(29,44): error C2065:  'bookList': 선언되지 않은 식별자입니다.
+C:\Users\songkey\Desktop\oop\OOP_TermProject_01\OOP_termProject\Model.cpp(29,73): error C2065:  'bookList': 선언되지 않은 식별자입니다.
+C:\Users\songkey\Desktop\oop\OOP_TermProject_01\OOP_termProject\Model.cpp(32,1): error C3867:  'Book::getBookTitle': 비표준 구문입니다. '&'를 사용하여 멤버 포인터를 만드세요.
+C:\Users\songkey\Desktop\oop\OOP_TermProject_01\OOP_termProject\Model.cpp(32,1): error C3867:  'Book::getAuthor': 비표준 구문입니다. '&'를 사용하여 멤버 포인터를 만드세요.
+C:\Users\songkey\Desktop\oop\OOP_TermProject_01\OOP_termProject\Model.cpp(32,1): error C3867:  'Book::getPublisher': 비표준 구문입니다. '&'를 사용하여 멤버 포인터를 만드세요.
+C:\Users\songkey\Desktop\oop\OOP_TermProject_01\OOP_termProject\Model.cpp(32,1): error C3867:  'Book::getBookNumber': 비표준 구문입니다. '&'를 사용하여 멤버 포인터를 만드세요.
+C:\Users\songkey\Desktop\oop\OOP_TermProject_01\OOP_termProject\Model.cpp(32,15): error C2512:  'Book::Book': 사용할 수 있는 적절한 기본 생성자가 없습니다.
+  oop_interface.cpp
+C:\Users\songkey\Desktop\oop\OOP_TermProject_01\OOP_termProject\Model.cpp(33,1): error C3867:  'Book::getLoan': 비표준 구문입니다. '&'를 사용하여 멤버 포인터를 만드세요.
   View.cpp
+C:\Users\songkey\Desktop\oop\OOP_TermProject_01\OOP_termProject\oop_interface.cpp(1,1): warning C4819:  현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+C:\Users\songkey\Desktop\oop\OOP_TermProject_01\OOP_termProject\Object.cpp(131,43): error C2535:  'void person::setLoanBook2(std::string)': 멤버 함수를 이미 정의했거나 선언했습니다.
   코드를 생성하고 있습니다...
-  OOP_termProject.vcxproj -> C:\Users\Free\Source\Repos\OOP_TermProject_012\x64\Debug\OOP_termProject.exe
+C:\Users\songkey\Desktop\oop\OOP_TermProject_01\OOP_termProject\Object.cpp(128): message :  'person::setLoanBook2' 선언을 참조하십시오.
