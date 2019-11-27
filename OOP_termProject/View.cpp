@@ -85,7 +85,7 @@ public:
 		std::cout << "고유번호    제목      저자   출판사      대출여부" << std::endl;
 
 		while (list != searchBooklist.end()) {
-			std::cout << (*list).getbookNumber();
+			std::cout << (*list).getBookNumber();
 			std::cout << "	";
 			std::cout << (*list).getBookTitle();
 			std::cout << "	";
@@ -139,6 +139,7 @@ public:
 		std::cout << "3. 도서 검색" << std::endl;
 		std::cout << "" << std::endl;
 		std::cout << "" << std::endl;
+		
 		std::cout << "" << std::endl;
 		std::cout << "" << std::endl;
 		std::cout << "" << std::endl;
