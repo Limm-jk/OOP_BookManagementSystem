@@ -10,7 +10,7 @@ public:
 
 	//로그인 페이지
 	void initScreen(std::string& Id, std::string& passwd) {
-		
+
 		std::cout << "-------------------------------------------------" << std::endl;
 		std::cout << "" << std::endl;
 		std::cout << "" << std::endl;
@@ -74,7 +74,7 @@ public:
 		std::cout << "" << std::endl;
 		std::cout << "-------------------------------------------------" << std::endl;
 		std::cout << "" << std::endl;
-		
+
 		std::cout << "검색할 책을 입력해 주세요 : ";
 		std::cin >> bookTitle;
 	}
@@ -99,7 +99,7 @@ public:
 		std::cout << "" << std::endl;
 		std::cout << "-------------------------------------------------" << std::endl;
 		std::cout << "" << std::endl;
-		
+
 		std::cout << "대출할 책의 고유번호를 입력해 주세요 : ";
 		std::cin >> bookNumber;
 	}
@@ -112,7 +112,7 @@ public:
 		std::cout << "" << std::endl;
 		std::cout << "" << std::endl;
 		std::cout << "" << std::endl;
-		std::cout << Person.getLoanBook1()<<"     "<<Person.getLoanBook2()<<"     "<<Person.getLoanBook3()<< std::endl;
+		std::cout << Person.getLoanBook1() << "     " << Person.getLoanBook2() << "     " << Person.getLoanBook3() << std::endl;
 		std::cout << "" << std::endl;
 		std::cout << "" << std::endl;
 		std::cout << "" << std::endl;
@@ -126,7 +126,7 @@ public:
 		std::cin >> bookNumber;
 	}
 
-	bool managePage(int& input) {
+	void managePage(int& input) {
 		std::cout << "-------------------------------------------------" << std::endl;
 		std::cout << "" << std::endl;
 		std::cout << "" << std::endl;
@@ -146,11 +146,68 @@ public:
 
 		std::cin >> input;
 	}
+	
+	//
+	bool manageBook(int& input) {
+		std::cout << "-------------------------------------------------" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "1. 도서 추가" << std::endl;
+		std::cout << "2. 회원 검색/삭제" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "-------------------------------------------------" << std::endl;
+		std::cout << "" << std::endl;
+
+		std::cin >> input;
+	}
+
+	bool managePerson(int& input) {
+		std::cout << "-------------------------------------------------" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "1. 회원 추가" << std::endl;
+		std::cout << "2. 삭제" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "-------------------------------------------------" << std::endl;
+		std::cout << "" << std::endl;
+
+		std::cin >> input;
+	}
 
 
-
-
-	void addBook(std::string& bookTitle, std::string& author, std::string& publisher, int& bookN ) {
+	void addBook(std::string& bookTitle, std::string& author, std::string& publisher, int& bookN) {
+		std::cout << "-------------------------------------------------" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "1. 도서 추가를 선택하셨습니다." << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "-------------------------------------------------" << std::endl;
+		std::cout << "" << std::endl;
 
 		std::cout << "추가할 도서의 제목을 입력해 주세요 : ";
 		std::cin >> bookTitle;
@@ -160,9 +217,26 @@ public:
 		std::cin >> publisher;
 		std::cout << "추가할 도서의 책번호를 입력해 주세요 : ";
 		std::cin >> bookN;
+		
 	}
 
 	void addPerson(std::string& name, std::string& id, std::string& pwd) {
+		std::cout << "-------------------------------------------------" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "1. 회원 추가를 선택하셨습니다." << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "-------------------------------------------------" << std::endl;
+		std::cout << "" << std::endl;
 
 		std::cout << "추가할 회원의 이름을 입력해 주세요 : ";
 		std::cin >> name;
