@@ -217,7 +217,6 @@ public:
 		std::cin >> publisher;
 		std::cout << "추가할 도서의 책번호를 입력해 주세요 : ";
 		std::cin >> bookN;
-		
 	}
 
 	void addPerson(std::string& name, std::string& id, std::string& pwd) {
@@ -244,5 +243,52 @@ public:
 		std::cin >> id;
 		std::cout << "추가할 회원의 비밀번호를 입력해 주세요 : ";
 		std::cin >> pwd;
+	}
+
+	void returnBook(std::list<Book> searchBooklist, int& returnNumber) {
+		std::list<Book>::iterator list = searchBooklist.begin();
+		std::cout << "-------------------------------------------------" << std::endl;
+		std::cout << "고유번호    제목      저자   출판사      대출여부" << std::endl;
+
+		while (list != searchBooklist.end()) {
+			std::cout << (*list).getBookNumber();
+			std::cout << "	";
+			std::cout << (*list).getBookTitle();
+			std::cout << "	";
+			std::cout << (*list).getAuthor();
+			std::cout << "	";
+			std::cout << (*list).getPublisher();
+			std::cout << "	";
+			std::cout << (*list).getLoan() << std::endl;
+			std::cout << "" << std::endl;
+		}
+		std::cout << "" << std::endl;
+		std::cout << "-------------------------------------------------" << std::endl;
+		std::cout << "" << std::endl;
+
+		std::cout << "반납할 책의 고유 번호를 입력해 주세요" << ;
+		std::cin >> returnNumber;
+	}
+
+	void deletePerson(std::string& deleteId) {
+		std::cout << "-------------------------------------------------" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "2. 회원 삭제를 선택하셨습니다." << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "-------------------------------------------------" << std::endl;
+		std::cout << "" << std::endl;
+
+		std::cout << "삭제할 회원의 id를 입력해 주세요 :";
+		std::cin >> deleteId;
 	}
 };
