@@ -128,7 +128,8 @@ public:
 	void setLoanBook2(std::string LoanBook2) {
 		loanBook2 = LoanBook2;
 	}
-	void setLoanBook2(std::string LoanBook2) {
-		loanBook2 = LoanBook2;
+	// setLoanBook3 로 수정완료. 
+	void setLoanBook3(std::string LoanBook3) {
+		loanBook3 = LoanBook3;
 	}
 };
