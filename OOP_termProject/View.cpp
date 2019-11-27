@@ -9,7 +9,7 @@ public:
 	//각 메소드에서 입력받을 때 입력받는 값에 대한 예외처리 필요
 
 	//로그인 페이지
-	bool initScreen(std::string& Id, std::string& passwd) {
+	void initScreen(std::string& Id, std::string& passwd) {
 
 		std::cout << "-------------------------------------------------" << std::endl;
 		std::cout << "" << std::endl;
@@ -32,12 +32,10 @@ public:
 		std::cin >> Id;
 		std::cout << "Passwd : ";
 		std::cin >> passwd;
-
-		return true;
 	}
 
 	//유저로 로그인
-	bool userPage(int& input) {
+	void userPage(int& input) {
 		std::cout << "-------------------------------------------------" << std::endl;
 		std::cout << "" << std::endl;
 		std::cout << "" << std::endl;
@@ -56,16 +54,16 @@ public:
 		std::cout << "" << std::endl;
 
 		std::cin >> input;
-		if (input == 1 || input == 2 || input == -1) {
+		/*if (input == 1 || input == 2 || input == -1) {
 			return true;
 		}
 		else {
 			return false;
-		}
+		}*/
 
 	}
 
-	bool searchBook(std::string& bookTitle) {
+	void searchBook(std::string& bookTitle) {
 		std::cout << "-------------------------------------------------" << std::endl;
 		std::cout << "" << std::endl;
 		std::cout << "" << std::endl;
@@ -86,10 +84,10 @@ public:
 		std::cout << "검색할 책을 입력해 주세요 : ";
 		std::cin >> bookTitle;
 
-		return true;
+		//return true;
 	}
 
-	bool loanBook(std::list<Book> searchBooklist, int& bookNumber) {
+	void loanBook(std::list<Book> searchBooklist, int& bookNumber) {
 		std::list<Book>::iterator list = searchBooklist.begin();
 		std::cout << "-------------------------------------------------" << std::endl;
 		std::cout << "고유번호    제목      저자   출판사      대출여부" << std::endl;
@@ -115,15 +113,15 @@ public:
 		std::cout << "대출할 책의 고유번호를 입력해 주세요 : ";
 		std::cin >> bookNumber;
 
-		for (std::list<Book>::iterator test = searchBooklist.begin(); test != searchBooklist.end(); ++test) {
+		/*for (std::list<Book>::iterator test = searchBooklist.begin(); test != searchBooklist.end(); ++test) {
 			if ((*test).getBookNumber() == bookNumber) {
 				return true;
 			}
 		}
-		return false;
+		return false;*/
 	}
 
-	bool returnBook(person Person, int& bookNumber) {
+	void returnBook(person Person, int& bookNumber) {
 		std::cout << "-------------------------------------------------" << std::endl;
 		std::cout << "" << std::endl;
 		std::cout << "" << std::endl;
@@ -144,30 +142,30 @@ public:
 		std::cout << "반납할 책의 고유번호를 입력해주세요 : ";
 		std::cin >> bookNumber;
 
-		if (Person.getLoanBook1() != "") {
-			int a = atoi(Person.getLoanBook1().c_str());
-			if (a == bookNumber) {
-				return true;
-			}
-		}
-		if (Person.getLoanBook2() != "") {
-			int b = atoi(Person.getLoanBook2().c_str());
-			if (b == bookNumber) {
-				return true;
-			}
-		}
-		if (Person.getLoanBook3() != "") {
-			int c = atoi(Person.getLoanBook3().c_str());
-			if (c == bookNumber) {
-				return true;
-			}
-		}
+		//if (Person.getLoanBook1() != "") {
+		//	int a = atoi(Person.getLoanBook1().c_str());
+		//	if (a == bookNumber) {
+		//		return true;
+		//	}
+		//}
+		//if (Person.getLoanBook2() != "") {
+		//	int b = atoi(Person.getLoanBook2().c_str());
+		//	if (b == bookNumber) {
+		//		return true;
+		//	}
+		//}
+		//if (Person.getLoanBook3() != "") {
+		//	int c = atoi(Person.getLoanBook3().c_str());
+		//	if (c == bookNumber) {
+		//		return true;
+		//	}
+		//}
 
-		//반납할 책의 고유번호를 입력하지 않았을 때 false
-		return false;
+		////반납할 책의 고유번호를 입력하지 않았을 때 false
+		//return false;
 	}
 
-	bool managePage(int& input) {
+	void managePage(int& input) {
 		std::cout << "-------------------------------------------------" << std::endl;
 		std::cout << "" << std::endl;
 		std::cout << "" << std::endl;
@@ -186,16 +184,16 @@ public:
 		std::cout << "" << std::endl;
 
 		std::cin >> input;
-		if (input == 1 || input == 2 || input == -1) {
+		/*if (input == 1 || input == 2 || input == -1) {
 			return true;
 		}
 		else {
 			return false;
-		}
+		}*/
 	}
 	
 	
-	bool manageBook(int& input) {
+	void manageBook(int& input) {
 		std::cout << "-------------------------------------------------" << std::endl;
 		std::cout << "" << std::endl;
 		std::cout << "" << std::endl;
@@ -214,15 +212,15 @@ public:
 		std::cout << "" << std::endl;
 
 		std::cin >> input;
-		if (input == 1 || input == 2 || input == -1) {
+		/*if (input == 1 || input == 2 || input == -1) {
 			return true;
 		}
 		else {
 			return false;
-		}
+		}*/
 	}
 
-	bool managePerson(int& input) {
+	void managePerson(int& input) {
 		std::cout << "-------------------------------------------------" << std::endl;
 		std::cout << "" << std::endl;
 		std::cout << "" << std::endl;
@@ -241,16 +239,16 @@ public:
 		std::cout << "" << std::endl;
 
 		std::cin >> input;
-		if (input == 1 || input == 2 || input == -1) {
+		/*if (input == 1 || input == 2 || input == -1) {
 			return true;
 		}
 		else {
 			return false;
-		}
+		}*/
 	}
 
 
-	bool addBook(std::string& bookTitle, std::string& author, std::string& publisher, int& bookN) {
+	void addBook(std::string& bookTitle, std::string& author, std::string& publisher, int& bookN) {
 		std::cout << "-------------------------------------------------" << std::endl;
 		std::cout << "" << std::endl;
 		std::cout << "" << std::endl;
@@ -278,7 +276,7 @@ public:
 		std::cin.clear();
 		std::cin.ignore();
 		std::cin >> bookN;
-		if (!std::cin) {
+		/*if (!std::cin) {
 			return false;
 		}
 
@@ -287,10 +285,10 @@ public:
 			return true;
 		}
 
-		return false;
+		return false;*/
 	}
 
-	bool addPerson(std::string& name, std::string& id, std::string& pwd) {
+	void addPerson(std::string& name, std::string& id, std::string& pwd) {
 		std::cout << "-------------------------------------------------" << std::endl;
 		std::cout << "" << std::endl;
 		std::cout << "" << std::endl;
@@ -315,15 +313,15 @@ public:
 		std::cout << "추가할 회원의 비밀번호를 입력해 주세요 : ";
 		std::cin >> pwd;
 
-		if (name != "" && id != "" && pwd != "") {
+		/*if (name != "" && id != "" && pwd != "") {
 			return true;
 		}
 		else {
 			return false;
-		}
+		}*/
 	}
 
-	bool returnBook(std::list<Book> searchBooklist, int& returnNumber) {
+	void returnBook(std::list<Book> searchBooklist, int& returnNumber) {
 		std::list<Book>::iterator list = searchBooklist.begin();
 		std::cout << "-------------------------------------------------" << std::endl;
 		std::cout << "고유번호    제목      저자   출판사      대출여부" << std::endl;
@@ -347,16 +345,16 @@ public:
 		std::cout << "반납할 책의 고유 번호를 입력해 주세요";
 		std::cin >> returnNumber;
 		
-		for (std::list<Book>::iterator test = searchBooklist.begin(); test != searchBooklist.end(); ++test) {
+		/*for (std::list<Book>::iterator test = searchBooklist.begin(); test != searchBooklist.end(); ++test) {
 			if ((*test).getBookNumber() == returnNumber) {
 				return true;
 			}
 		}
-		return false;
+		return false;*/
 		
 	}
 
-	bool deletePerson(std::string& deleteId) {
+	void deletePerson(std::string& deleteId) {
 		std::cout << "-------------------------------------------------" << std::endl;
 		std::cout << "" << std::endl;
 		std::cout << "" << std::endl;
@@ -377,6 +375,6 @@ public:
 		std::cout << "삭제할 회원의 id를 입력해 주세요 :";
 		std::cin >> deleteId;
 
-		return true;
+		//return true;
 	}
 };
