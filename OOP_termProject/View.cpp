@@ -1,6 +1,7 @@
 #include<iostream>
 #include<list>
 #include"Object.cpp"
+#include <windows.h>
 
 class View {
 
@@ -376,5 +377,26 @@ public:
 		std::cin >> deleteId;
 
 		//return true;
+	}
+
+	void faultPage() {
+		std::cout << "-------------------------------------------------" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "잘못된 입력입니다. 다시 입력해 주세요" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "-------------------------------------------------" << std::endl;
+		std::cout << "" << std::endl;
+
+		Sleep(1000);
 	}
 };
