@@ -162,8 +162,10 @@ class Model {
 							}
 						}
 					}
+					++pslistItr;
 				}
 			}
+			++bklistItr;
 		}
 		return false;
 	}
@@ -225,10 +227,12 @@ class Model {
 								}
 							}
 						}
+						++pslistItr;
 					}
 				
 				}
 			}
+			++bklistItr;
 		}
 		return false;
 	}
@@ -374,7 +378,7 @@ public:
 			person.setLoanBook3(loanBook3);
 
 
-			personlist.push_back(person));
+			personlist.push_back(person);
 		}
 	}
 		/*
