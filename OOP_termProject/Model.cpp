@@ -97,7 +97,7 @@ class Model {
 	std::list<person> personSearch(std::string id) {
 		std::list<person> alist;
 
-		pslistItr = personlist.begin();
+		std::list<person>::iterator pslistItr = personlist.begin();
 		while (pslistItr != personlist.end()) {
 			if ((*pslistItr).getId().find(id) != std::string::npos) {	//find(검색어) 함수는 찾는 문자열이 없을 경우 npos라는 상수를 반환함.
 																				//이 경우 찾았기 때문에 npos가 아닌것.
@@ -111,7 +111,7 @@ class Model {
 			}
 			pslistItr++;
 		}
-		pslistItr = booklist.begin();	//다 돌았으면 반복자 초기화
+
 		return alist;					//검색결과 리스트 리턴
 	}
 	
@@ -313,11 +313,13 @@ public:
 			int bookNumber;
 			int beforIntToBool;
 
-			if (std::getline(input, line, "\n")== ""){
+			std::getline(input, line);
+			if (line == ''){
 				break;
 			}
 			
-			std::istream ss(line);
+			std::istringstream ss;
+			ss.str(line);
 			std::string buffer, value;
 			
 			std::getline(ss, buffer, '|');
@@ -333,8 +335,7 @@ public:
 			publisher = value;
 
 			std::getline(ss, buffer, '|');
-			value = std::stoi(buffer);//정수로 변환
-			bookNumber = value;
+			bookNumber = std::stoi(buffer);
 
 			std::getline(ss, buffer, '|');
 			value = buffer;
@@ -366,11 +367,15 @@ public:
 			std::string loanBook1;
 			std::string loanBook2;
 			std::string loanBook3;
-			if (std::getline(input, line, \n) == "") {
+
+			std::getline(input, line);
+			if (line == '') {
 				break;
 			}
-			istream ss(line);
-			string buffer, value;
+
+			std::istringstream ss;
+			ss.str(line);
+			std::string buffer, value;
 
 			std::getline(ss, buffer, '|');
 			value = buffer;
@@ -385,8 +390,7 @@ public:
 			passwd = value;
 
 			std::getline(ss, buffer, '|');
-			value = stoi(buffer);//정수로 변환
-			loanNumber = value;
+			loanNumber = stoi(buffer);//정수로 변환
 
 			std::getline(ss, buffer, '|');
 			value = buffer;
@@ -426,7 +430,7 @@ public:
 			std::string author = (*itr).getAuthor();
 			std::string publisher = (*itr).getPublisher();
 			std::string  bookNumber = std::to_string((*itr).getBookNumber());
-			bool beforBoolToInt = (*itr).getLoan;
+			bool beforBoolToInt = (*itr).getLoan();
 			std::string loan;
 
 			if (beforBoolToInt == true) {
@@ -445,12 +449,12 @@ public:
 		std::string result = "";
 		for (std::list<person>::iterator itr = personlist.begin(); itr != personlist.end(); itr++) {
 			std::string name = (*itr).getName();
-			std::string id = (*itr).getId;
-			std::string passwd = (*itr).getPasswd;
-			std::string loanNumber = std::to_string((*itr).getLoanNumber;
-			std::string loanBook1 = (*itr).getLoanBook1;
-			std::string loanBook2 = (*itr).getLoanBook2;
-			std::string loanBook3 = (*itr).getLoanBook3;
+			std::string id = (*itr).getId();
+			std::string passwd = (*itr).getPasswd();
+			std::string loanNumber = std::to_string((*itr).getLoanNumber());
+			std::string loanBook1 = (*itr).getLoanBook1();
+			std::string loanBook2 = (*itr).getLoanBook2();
+			std::string loanBook3 = (*itr).getLoanBook3();
 
 			result = result + name + "|" + id + "|" + passwd + "|" + loanNumber + "|" + loanBook1 + "|" + loanBook2 + "|" + loanBook3 + "\n";
 
