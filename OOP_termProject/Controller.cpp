@@ -1,6 +1,6 @@
 #include "View.cpp"
 //#include "Model.cpp"
-//#include "Object.cpp"
+#include "Object.cpp"
 #include <stdlib.h>
 
 class Controller {
@@ -13,7 +13,7 @@ private:
 	//로그인
 	std::string returnid;
 	std::string returnpasswd;
-	//	person handler;
+	person handler;
 	int scanSignal;//번호입력시 번호저장 변수
 
 	//검색 입력받은 책 이름
@@ -60,16 +60,18 @@ public:
 				//유효하지 않은 계정 while문 재실행
 //				continue;
 //			}
-			//회원계정일때
+			//관리자계정일때
 			if (returnid == "admin") {
 				while (scanSignal != 0) {
 					system("cls");
-					view.managePage(scanSignal);
+					view.managePage(scanSignal);//1도서 2회원
 					if (scanSignal == 1) {
 						//도서관리
 						while (scanSignal != 0) {
-							//scanSignal받는 view함수
+							system("cls");
+							view.manageBook(scanSignal);
 							if (scanSignal == 1) {
+								//책추가
 								system("cls");
 								view.addBook(addbookTitle, addauthor, addpublisher, addbookNumber);
 								//모델에 addbook
@@ -90,7 +92,8 @@ public:
 					if (scanSignal == 2) {
 						//회원관리
 						while (scanSignal != 0) {
-							//scanSignal받는 view함수
+							system("cls");
+							view.managePerson(scanSignal);
 							if (scanSignal == 1) {
 								//회원 추가.
 								system("cls");
@@ -122,14 +125,14 @@ public:
 			else {
 				while (scanSignal != 0) {
 					system("cls");
-					view.userPage(scanSignal);//시그널 확인
+					view.userPage(scanSignal);//시그널 확인 1검색대출 2 반납
 					if (scanSignal == 1) {
 						view.searchBook(returntitle);//책이름 입력
 						//검색메소드
 					}
 					else if (scanSignal == 2) {
-						//							view.returnBook(handler, returnBookNumber);
-													//반납메소드
+						view.returnBook(handler, returnBookNumber);
+						//반납메소드
 					}
 					else if (scanSignal == 0) {
 						//종료&로그아웃
@@ -142,6 +145,7 @@ public:
 		}
 	}
 	Controller() {
+
 	}
 };
 
@@ -152,4 +156,4 @@ int main() {
 		appc.run();
 	}
 	return 0;
-}
+};
