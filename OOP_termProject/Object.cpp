@@ -17,6 +17,13 @@ private:
 public:
 	//메소드
 	//생성자로 초기값 설정
+	Book() {
+		bookTitle = "";
+		author = "";
+		publisher = "";
+		bookNumber = 0;
+		loan = false;
+	}
 	Book(std::string Title, std::string Author, std::string Publisher, int BookNumber)
 	:bookTitle(Title), author(Author), publisher(Publisher), bookNumber(BookNumber){
 		loan = false;
@@ -79,6 +86,16 @@ private:
 public:
 	//메소드
 	//생성자로 초기값 설정
+	person() {
+		name = "";
+		id = "";
+		passwd = "";
+		loanNumber = 0;
+		loanBook1 = "";
+		loanBook2 = "";
+		loanBook3 = "";
+	}
+
 	person(std::string Name, std::string Id, std::string Passwd) 
 	:name(Name), id(Id), passwd(Passwd){
 		loanNumber = 0;
