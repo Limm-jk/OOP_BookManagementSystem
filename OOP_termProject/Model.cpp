@@ -1,5 +1,5 @@
 #include<list>
-#include"Object.h"
+#include"Object.cpp"
 #include<string>
 #include<fstream>
 #include<iostream>

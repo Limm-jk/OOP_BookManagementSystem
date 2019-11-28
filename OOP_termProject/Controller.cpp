@@ -1,6 +1,6 @@
 #include "View.cpp"
 //#include "Model.cpp"
-#include "Object.h"
+#include "Object.cpp"
 #include <stdlib.h>
 
 class Controller {
