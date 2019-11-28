@@ -1,5 +1,8 @@
 #include<list>
 #include"Object.cpp"
+#include<string>
+#include<fstream>
+#include<iostream>
 //바뀜
 class Model {
 	//book list선언(링크드리스트 - STL사용)
@@ -12,11 +15,6 @@ class Model {
 	std::list<person>::iterator pslistItr = personlist.begin();
 
 
-public:
-	void dataInit() {
-		//파일입출력으로 booklist에 파일의 책데이터를 푸시(초기실행시 1번만 실행)
-		//파일입출력으로 personlist에 파일의 사람데이터를 푸시(초기실행시 1번만 실행)
-	}
 
 	//로그인 check
 	bool loginCheck(std::string id, std::string passwd) {
@@ -250,7 +248,194 @@ public:
 		return false;
 	}
 
+	string file_to_string(string filePath) {
+		std::ifstream in(filePath);
+		std::string s;
+
+		if (in.is_open()) {
+			// 위치 지정자를 파일 끝으로 옮긴다.
+			in.seekg(0, std::ios::end);
+
+			// 그리고 그 위치를 읽는다. (파일의 크기)
+			int size = in.tellg();
+
+			// 그 크기의 문자열을 할당한다.
+			s.resize(size);
+
+			// 위치 지정자를 다시 파일 맨 앞으로 옮긴다.
+			in.seekg(0, std::ios::beg);
+
+			// 파일 전체 내용을 읽어서 문자열에 저장한다.
+			in.read(&s[0], size);
+
+			in.close();//파일 닫음
+			return s;
+		}
+	}
+public:
+	void makeBookList(std::string givenString) {			//사용예시: makeBookList(file_to_string("book.txt"));
+		std::string line;
+		while (givenString)
+		{
+			std::string title;
+			std::string author;
+			std::string publisher;
+			int bookNumber;
+			int beforIntToBool;
+			
+			std::getline(givenString, line, \n);
+			std::istream ss(line);
+			std::string buffer, value;
+			
+			std::getline(ss, buffer, '|');
+			value = buffer;
+			title = value;
+
+			std::getline(ss, buffer, '|');
+			value = buffer;
+			author = value;
+
+			std::getline(ss, buffer, '|');
+			value = buffer;
+			publisher = value;
+
+			std::getline(ss, buffer, '|');
+			value = atoi(buffer.c_str());//정수로 변환
+			bookNumber = value;
+
+			std::getline(ss, buffer, '|');
+			value = atoi(buffer.c_str());//일단 정수로 변환
+			beforIntToBool = value;
+
+			Book book(title, author, publisher, bookNumber);
+			if (beforIntToBool == 1) {								//수동 형변환
+				book.setLoan(true);
+			}
+			else {
+				book.setLoan(false);
+			}
+
+			booklist.push_back(book));
+		}
+	}
+
+public:
+	void makePersonList(std::string givenString) {
+		std::string line;
+		while (givenString)//한줄 읽어서 객체 만들고 리스트에 푸시. 문자열 끝까지. \\\\ 매개변수 수정 필요?
+		{
+			std::string name;
+			std::string id;
+			std::string passwd;
+			int loanNumber;
+			std::string loanBook1;
+			std::string loanBook2;
+			std::string loanBook3;
+
+			std::getline(givenString, line, \n);
+			istream ss(line);
+			string buffer, value;
+
+			std::getline(ss, buffer, '|');
+			value = buffer;
+			name = value;
+
+			std::getline(ss, buffer, '|');
+			value = buffer;
+			id = value;
+
+			std::getline(ss, buffer, '|');
+			value = buffer;
+			passwd = value;
+
+			std::getline(ss, buffer, '|');
+			value = atoi(buffer.c_str());//정수로 변환
+			loanNumber = value;
+
+			std::getline(ss, buffer, '|');
+			value = buffer;
+			loanBook1 = value;
+
+			std::getline(ss, buffer, '|');
+			value = buffer;
+			loanBook2 = value;
+
+			std::getline(ss, buffer, '|');
+			value = buffer;
+			loanBook3 = value;
+
+			person person(name, id, passwd);
+			person.setLoanNumber(loanNumber);
+			person.setLoanBook1(loanBook1);
+			person.setLoanBook2(loanBook2);
+			person.setLoanBook3(loanBook3);
 
 
-	//파일 업데이트
+			personlist.push_back(person));
+		}
+	}
+		/*
+	public:
+		void dataInit() {
+			//파일입출력으로 booklist에 파일의 책데이터를 푸시(초기실행시 1번만 실행)
+			//파일입출력으로 personlist에 파일의 사람데이터를 푸시(초기실행시 1번만 실행)
+		}
+		*/														//더이상 쓰이지 않음. file_to_string 로 사용할것.
+
+public:
+	std::string booklist_to_string() {
+		std::string result;
+		for (std::list<Book>::iterator itr = booklist.begin(); itr != booklist.end(); itr++) {
+			std::string title = (*itr).getBookTitle();
+			std::string author = (*itr).getAuthor();
+			std::string publisher = (*itr).getPublisher();
+			std::string  bookNumber = std::to_string((*itr).getBookNumber());
+			bool beforBoolToInt = (*itr).getLoan;
+			std::string loan;
+
+			if (beforBoolToInt == true) {
+				loan = "1"
+			}
+			else {
+				loan = "0";
+			}
+			
+			result = result + title + "|" + author + "|" + publisher + "|" + bookNumber + "|" + loan + "\n";
+
+		}
+	}
+public:
+	std::string personlist_to_string() {
+		std::string result;
+		for (std::list<person>::iterator itr = personlist.begin(); itr != personlist.end(); itr++) {
+			std::string name = (*itr).getName();
+			std::string id = (*itr).getId;
+			std::string passwd = (*itr).getPasswd;
+			std::string loanNumber = std::to_string((*itr).getLoanNumber;
+			std::string loanBook1 = (*itr).getLoanBook1;
+			std::string loanBook2 = (*itr).getLoanBook2;
+			std::string loanBook3 = (*itr).getLoanBook3;
+
+			result = result + name + "|" + id + "|" + passwd + "|" + loanNumber + "|" + loanBook1 + "|" + loanBook2 + "|" + loanBook3 + "\n";
+
+		}
+	}
+	void string_to_file(std::string bookString, std::string personString) {//파일 업데이트. 프로그램 종료 시 반드시 수행할것. 예): string_to_file(booklist_to_string(), personlist_to_string());
+		std::fstream out;
+		out.open("booklist.txt", ios_base::out | ios_base::trunc);	//파일 초기화하고 쓰기모드로 열기
+
+		if (out.is_open()) {
+			out << bookString;										//파일에 새 내용 저장
+			out.close();
+		}
+
+		out.open("personlist.txt", ios_base::out | ios_base::trunc);
+
+		if (out.is_open()) {
+			out << personString;
+			out.close();
+		}
+	}
+	
+
 };
