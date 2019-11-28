@@ -63,7 +63,7 @@ public:
 //			}
 			//관리자계정일때
 			if (returnid == "admin") {
-				while (scanSignal != 0) {
+				while (1) {
 					system("cls");
 					view.managePage(scanSignal);//1도서 2회원
 					if (scanSignal == 1) {
@@ -84,6 +84,7 @@ public:
 							}
 							else if (scanSignal == 0) {
 								//종료합니당
+								break;
 							}
 							else {
 								//잘못된 입력
@@ -92,7 +93,7 @@ public:
 					}
 					if (scanSignal == 2) {
 						//회원관리
-						while (scanSignal != 0) {
+						while (1) {
 							system("cls");
 							view.managePerson(scanSignal);
 							if (scanSignal == 1) {
@@ -108,6 +109,7 @@ public:
 							}
 							else if (scanSignal == 0) {
 								//종료합니당
+								break;
 							}
 							else {
 								//잘못된 입력
@@ -116,6 +118,7 @@ public:
 					}
 					else if (scanSignal == 0) {
 						//종료 로그아웃
+						break;
 					}
 					else {
 						//잘못된 입력
@@ -124,7 +127,7 @@ public:
 			}
 
 			else {
-				while (scanSignal != 0) {
+				while (1) {
 					system("cls");
 					view.userPage(scanSignal);//시그널 확인 1검색대출 2 반납
 					if (scanSignal == 1) {
@@ -137,6 +140,7 @@ public:
 					}
 					else if (scanSignal == 0) {
 						//종료&로그아웃
+						break;
 					}
 					else {
 						//잘못된 입력
