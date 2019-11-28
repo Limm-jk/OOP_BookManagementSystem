@@ -1,6 +1,7 @@
 #include<iostream>
 #include<list>
 #include"Object.cpp"
+#include <windows.h>
 
 class View {
 
@@ -49,7 +50,7 @@ public:
 		std::cout << "" << std::endl;
 		std::cout << "" << std::endl;
 		std::cout << "" << std::endl;
-		std::cout << "-1. 로그인 페이지로 돌아가기" << std::endl;
+		std::cout << "0. 로그인 페이지로 돌아가기" << std::endl;
 		std::cout << "-------------------------------------------------" << std::endl;
 		std::cout << "" << std::endl;
 
@@ -179,7 +180,7 @@ public:
 		std::cout << "" << std::endl;
 		std::cout << "" << std::endl;
 		std::cout << "" << std::endl;
-		std::cout << "-1. 로그인 페이지로 돌아갑니다." << std::endl;
+		std::cout << "0. 로그인 페이지로 돌아갑니다." << std::endl;
 		std::cout << "-------------------------------------------------" << std::endl;
 		std::cout << "" << std::endl;
 
@@ -207,7 +208,7 @@ public:
 		std::cout << "" << std::endl;
 		std::cout << "" << std::endl;
 		std::cout << "" << std::endl;
-		std::cout << "" << std::endl;
+		std::cout << "0. 이전 페이지로 돌아갑니다." << std::endl;
 		std::cout << "-------------------------------------------------" << std::endl;
 		std::cout << "" << std::endl;
 
@@ -234,7 +235,7 @@ public:
 		std::cout << "" << std::endl;
 		std::cout << "" << std::endl;
 		std::cout << "" << std::endl;
-		std::cout << "" << std::endl;
+		std::cout << "0. 이전 페이지로 돌아갑니다." << std::endl;
 		std::cout << "-------------------------------------------------" << std::endl;
 		std::cout << "" << std::endl;
 
@@ -376,5 +377,26 @@ public:
 		std::cin >> deleteId;
 
 		//return true;
+	}
+
+	void faultPage() {
+		std::cout << "-------------------------------------------------" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "잘못된 입력입니다. 다시 입력해 주세요" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "-------------------------------------------------" << std::endl;
+		std::cout << "" << std::endl;
+
+		Sleep(1000);
 	}
 };
