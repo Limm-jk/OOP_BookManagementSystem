@@ -1,15 +1,8 @@
-﻿  Controller.cpp
-C:\Users\Free\Desktop\OOP_TermProject_01-master\OOP_TermProject_01\OOP_termProject\Model.cpp(288,13): warning C4244: '초기화 중': 'std::streamoff'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\Free\Desktop\OOP_TermProject_01-master\OOP_TermProject_01\OOP_termProject\Object.cpp(4,12): error C2011: 'Book': 'class' 형식 재정의
-C:\Users\Free\Desktop\OOP_TermProject_01-master\OOP_TermProject_01\OOP_termProject\Object.h(4): message : 'Book' 선언을 참조하십시오.
-C:\Users\Free\Desktop\OOP_TermProject_01-master\OOP_TermProject_01\OOP_termProject\Object.cpp(61,14): error C2011: 'person': 'class' 형식 재정의
-C:\Users\Free\Desktop\OOP_TermProject_01-master\OOP_TermProject_01\OOP_termProject\Object.h(36): message : 'person' 선언을 참조하십시오.
-C:\Users\Free\Desktop\OOP_TermProject_01-master\OOP_TermProject_01\OOP_termProject\Controller.cpp(16,16): error C2079: 'Controller::handler'은(는) 정의되지 않은 class 'person'을(를) 사용합니다.
-C:\Users\Free\Desktop\OOP_TermProject_01-master\OOP_TermProject_01\OOP_termProject\Controller.cpp(135,1): error C2664: 'void View::returnBook(std::list<Book,std::allocator<_Ty>>,int &)': 인수 1을(를) 'int'에서 'person'(으)로 변환할 수 없습니다.
-C:\Users\Free\Desktop\OOP_TermProject_01-master\OOP_TermProject_01\OOP_termProject\Controller.cpp(135,1): error C2664:         with
-C:\Users\Free\Desktop\OOP_TermProject_01-master\OOP_TermProject_01\OOP_termProject\Controller.cpp(135,1): error C2664:         [
-C:\Users\Free\Desktop\OOP_TermProject_01-master\OOP_TermProject_01\OOP_termProject\Controller.cpp(135,1): error C2664:             _Ty=Book
-C:\Users\Free\Desktop\OOP_TermProject_01-master\OOP_TermProject_01\OOP_termProject\Controller.cpp(135,1): error C2664:         ]
-C:\Users\Free\Desktop\OOP_TermProject_01-master\OOP_TermProject_01\OOP_termProject\Controller.cpp(135,1): message : 정의되지 않은 형식 'person'을(를) 사용했습니다.
-C:\Users\Free\Desktop\OOP_TermProject_01-master\OOP_TermProject_01\OOP_termProject\Object.h(36,7): message : 'person' 선언을 참조하십시오.
-C:\Users\Free\Desktop\OOP_TermProject_01-master\OOP_TermProject_01\OOP_termProject\View.cpp(125,7): message : 'View::returnBook' 선언을 참조하십시오.
+﻿  Object.cpp
+  Controller.cpp
+C:\Users\songkey\Desktop\oop\OOP_TermProject_01\OOP_termProject\Controller.cpp(146,15): error C2512:  'person': 사용할 수 있는 적절한 기본 생성자가 없습니다.
+  Model.cpp
+C:\Users\songkey\Desktop\oop\OOP_TermProject_01\OOP_termProject\Object.cpp(61,7): message :  'person' 선언을 참조하십시오.
+  View.cpp
+  코드를 생성하고 있습니다...
+C:\Users\songkey\Desktop\oop\OOP_TermProject_01\OOP_termProject\Model.cpp(288,13): warning C4244:  '초기화 중': 'std::streamoff'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
