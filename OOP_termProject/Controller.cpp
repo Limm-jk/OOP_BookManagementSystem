@@ -1,5 +1,4 @@
 #include "View.cpp"
-//#include "Model.cpp"
 #include "Object.cpp"
 #include <stdlib.h>
 
