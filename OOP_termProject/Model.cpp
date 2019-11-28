@@ -133,8 +133,8 @@ class Model {
 		while (bklistItr != booklist.end()) { 
 			if ((*bklistItr).getBookNumber() == bookNumber) { // 책이 있는지 확인
 				while (pslistItr != personlist.end()) { 
-					if ((*pslistItr).getId == id) { // id 같은 사람 찾기 
-						int num = (*pslistItr).getLoanNumber;
+					if ((*pslistItr).getId() == id) { // id 같은 사람 찾기 
+						int num = (*pslistItr).getLoanNumber();
 						std::string settitle = std::to_string(bookNumber);
 						// 권수가 1,2일때는 loanbook이 몇번째인지 모른다.
 						if (num == 0) { // 책을 빌리지 않았을 때
@@ -145,19 +145,19 @@ class Model {
 						}
 						else if (num == 1) { // 한권 빌렸을 때 
 							// 뭐가 빌렸는지 확인 
-							if ((*pslistItr).getLoanBook1 != "") {
+							if ((*pslistItr).getLoanBook1() != "") {
 								(*bklistItr).setLoan(true);
 								(*pslistItr).setLoanNumber(2);
 								(*pslistItr).setLoanBook2(settitle);
 								return true;
 							}
-							else if ((*pslistItr).getLoanBook2 != "") {
+							else if ((*pslistItr).getLoanBook2() != "") {
 								(*bklistItr).setLoan(true);
 								(*pslistItr).setLoanNumber(2);
 								(*pslistItr).setLoanBook1(settitle);
 								return true;
 							}
-							else if ((*pslistItr).getLoanBook3 != "") {
+							else if ((*pslistItr).getLoanBook3() != "") {
 								(*bklistItr).setLoan(true);
 								(*pslistItr).setLoanNumber(2);
 								(*pslistItr).setLoanBook1(settitle);
@@ -166,19 +166,19 @@ class Model {
 						}
 						else if (num == 2) { // 두권 빌렸을 때
 							// 뭐가 안빌렸는지 확인 
-							if ((*pslistItr).getLoanBook1 == "") {
+							if ((*pslistItr).getLoanBook1() == "") {
 								(*bklistItr).setLoan(true);
 								(*pslistItr).setLoanNumber(3);
 								(*pslistItr).setLoanBook1(settitle);
 								return true;
 							}
-							else if ((*pslistItr).getLoanBook2 == "") {
+							else if ((*pslistItr).getLoanBook2() == "") {
 								(*bklistItr).setLoan(true);
 								(*pslistItr).setLoanNumber(3);
 								(*pslistItr).setLoanBook2(settitle);
 								return true;
 							}
-							else if ((*pslistItr).getLoanBook3 == "") {
+							else if ((*pslistItr).getLoanBook3() == "") {
 								(*bklistItr).setLoan(true);
 								(*pslistItr).setLoanNumber(3);
 								(*pslistItr).setLoanBook3(settitle);
