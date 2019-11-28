@@ -248,7 +248,7 @@ class Model {
 		return false;
 	}
 
-	string file_to_string(string filePath) {
+	std::string file_to_string(std::string filePath) {
 		std::ifstream in(filePath);
 		std::string s;
 
