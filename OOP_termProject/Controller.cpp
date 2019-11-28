@@ -1,11 +1,12 @@
 #include "View.cpp"
 #include "Object.cpp"
+#include "Model.cpp"
 #include <stdlib.h>
 
 class Controller {
 private:
 	View view;
-	//	Model model;
+	Model model;
 	std::string SUPERUSER = "admin";
 	bool testtrue = true; // 채우기용 bool변수
 
