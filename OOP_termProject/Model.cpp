@@ -102,10 +102,10 @@ class Model {
 			if ((*pslistItr).getId().find(id) != std::string::npos) {	//find(검색어) 함수는 찾는 문자열이 없을 경우 npos라는 상수를 반환함.
 																				//이 경우 찾았기 때문에 npos가 아닌것.
 				person aperson((*pslistItr).getName(), (*pslistItr).getId(), (*pslistItr).getPasswd());//가리키는 객체를 복사
-				aperson.setLoanNumber((*pslistItr).getLoanNumber);
-				aperson.setLoanBook1((*pslistItr).getLoanBook1);
-				aperson.setLoanBook2((*pslistItr).getLoanBook2);
-				aperson.setLoanBook3((*pslistItr).getLoanBook3);
+				aperson.setLoanNumber((*pslistItr).getLoanNumber());
+				aperson.setLoanBook1((*pslistItr).getLoanBook1());
+				aperson.setLoanBook2((*pslistItr).getLoanBook2());
+				aperson.setLoanBook3((*pslistItr).getLoanBook3());
 
 				alist.push_back(aperson);										//찾았으니 복사된 객체를 리스트 뒤에 푸시.
 			}
@@ -134,7 +134,7 @@ class Model {
 			if ((*bklistItr).getBookNumber() == bookNumber) { // 책이 있는지 확인
 				while (pslistItr != personlist.end()) { 
 					if ((*pslistItr).getId() == id) { // id 같은 사람 찾기 
-						int num = (*pslistItr).getLoanNumber;
+						int num = (*pslistItr).getLoanNumber();
 						std::string settitle = std::to_string(bookNumber);
 						// 권수가 1,2일때는 loanbook이 몇번째인지 모른다.
 						if (num == 0) { // 책을 빌리지 않았을 때
