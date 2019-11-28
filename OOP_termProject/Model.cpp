@@ -302,7 +302,7 @@ public:
 			std::string publisher;
 			int bookNumber;
 			int beforIntToBool;
-			if ( std::getline(givenString, line, \n)== ""){
+			if (std::getline(givenString, line, "\n")== ""){
 				break;
 			}
 			
@@ -337,7 +337,7 @@ public:
 				book.setLoan(false);
 			}
 
-			booklist.push_back(book));
+			booklist.push_back(book);
 		}
 	}
 
@@ -417,7 +417,7 @@ public:
 			std::string loan;
 
 			if (beforBoolToInt == true) {
-				loan = "1"
+				loan = "1";
 			}
 			else {
 				loan = "0";
@@ -429,7 +429,7 @@ public:
 	}
 public:
 	std::string personlist_to_string() {
-		std::string result;
+		std::string result = "";
 		for (std::list<person>::iterator itr = personlist.begin(); itr != personlist.end(); itr++) {
 			std::string name = (*itr).getName();
 			std::string id = (*itr).getId;
@@ -442,6 +442,7 @@ public:
 			result = result + name + "|" + id + "|" + passwd + "|" + loanNumber + "|" + loanBook1 + "|" + loanBook2 + "|" + loanBook3 + "\n";
 
 		}
+		return result;
 	}
 	void string_to_file(std::string bookString, std::string personString) {//파일 업데이트. 프로그램 종료 시 반드시 수행할것. 예): string_to_file(booklist_to_string(), personlist_to_string());
 		std::fstream out;
