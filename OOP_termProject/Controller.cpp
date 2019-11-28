@@ -54,6 +54,7 @@ public:
 	void run() {
 		while (1) {
 			system("cls");
+			scanSignal = 1;
 			view.initScreen(returnid, returnpasswd);	//초기화면
 			//bool login = model.loginCheck(returnid, returnpasswd);
 //			if (!login) {
