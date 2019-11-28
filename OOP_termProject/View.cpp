@@ -273,15 +273,17 @@ public:
 		std::cin >> author;
 		std::cout << "추가할 도서의 출판사를 입력해 주세요 : ";
 		std::cin >> publisher;
-		std::cout << "추가할 도서의 책번호를 입력해 주세요 : ";
-		std::cin.clear();
-		std::cin.ignore();
-		std::cin >> bookN;
-		/*if (!std::cin) {
-			return false;
+		
+		while(1){
+			std::cout << "추가할 도서의 책번호를 입력해 주세요 : ";
+			std::cin.clear();
+			std::cin.ignore();
+			std::cin >> bookN;
+			if (!std::cin) {
+				break;;
+			}
 		}
-
-
+		/*
 		if (bookTitle != "" && author != "" && publisher != "") {
 			return true;
 		}
