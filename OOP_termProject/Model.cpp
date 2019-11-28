@@ -111,7 +111,6 @@ class Model {
 			}
 			pslistItr++;
 		}
-		pslistItr = booklist.begin();	//다 돌았으면 반복자 초기화
 		return alist;					//검색결과 리스트 리턴
 	}
 	
@@ -307,13 +306,14 @@ public:
 			std::string author;
 			std::string publisher;
 			int bookNumber;
-			int beforIntToBool;
-
-			if (std::getline(input, line, "\n")== ""){
+			std::string beforIntToBool;
+			std::getline(input, line);
+			if (line == ""){
 				break;
 			}
 			
-			std::istream ss(line);
+			std::istringstream ss;
+			ss.str(line);
 			std::string buffer, value;
 			
 			std::getline(ss, buffer, '|');
@@ -329,15 +329,14 @@ public:
 			publisher = value;
 
 			std::getline(ss, buffer, '|');
-			value = std::stoi(buffer);//정수로 변환
-			bookNumber = value;
+			bookNumber = std::stoi(buffer);//정수로 변환
 
 			std::getline(ss, buffer, '|');
 			value = buffer;
 			beforIntToBool = value;
 
 			Book book(title, author, publisher, bookNumber);
-			if (beforIntToBool == "1") {								//수동 형변환
+			if (beforIntToBool == '1') {								//수동 형변환
 				book.setLoan(true);
 			}
 			else {
@@ -362,11 +361,13 @@ public:
 			std::string loanBook1;
 			std::string loanBook2;
 			std::string loanBook3;
-			if (std::getline(input, line, \n) == "") {
+			std::getline(input, line);
+			if (line == "") {
 				break;
 			}
-			istream ss(line);
-			string buffer, value;
+			std::istringstream ss;
+			ss.str(line);
+			std::string buffer, value;
 
 			std::getline(ss, buffer, '|');
 			value = buffer;
@@ -443,7 +444,7 @@ public:
 			std::string name = (*itr).getName();
 			std::string id = (*itr).getId;
 			std::string passwd = (*itr).getPasswd;
-			std::string loanNumber = std::to_string((*itr).getLoanNumber;
+			std::string loanNumber = std::to_string((*itr).getLoanNumber);
 			std::string loanBook1 = (*itr).getLoanBook1;
 			std::string loanBook2 = (*itr).getLoanBook2;
 			std::string loanBook3 = (*itr).getLoanBook3;
