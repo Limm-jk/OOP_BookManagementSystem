@@ -314,7 +314,7 @@ public:
 			std::string beforIntToBool;
 
 			std::getline(input, line);
-			if (line == ''){
+			if (line == ""){
 				break;
 			}
 			
@@ -369,7 +369,7 @@ public:
 			std::string loanBook3;
 
 			std::getline(input, line);
-			if (line == '') {
+			if (line == "") {
 				break;
 			}
 
