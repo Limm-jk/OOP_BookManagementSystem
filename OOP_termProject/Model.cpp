@@ -282,7 +282,7 @@ public:
 			std::string publisher;
 			int bookNumber;
 			int beforIntToBool;
-			if ( std::getline(givenString, line, \n)== ""){
+			if (std::getline(givenString, line, "\n")== ""){
 				break;
 			}
 			
