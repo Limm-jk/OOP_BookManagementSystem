@@ -68,7 +68,7 @@ public:
 					view.managePage(scanSignal);//1도서 2회원
 					if (scanSignal == 1) {
 						//도서관리
-						while (scanSignal != 0) {
+						while (1) {
 							system("cls");
 							view.manageBook(scanSignal);
 							if (scanSignal == 1) {
@@ -91,7 +91,7 @@ public:
 							}
 						}
 					}
-					if (scanSignal == 2) {
+					else if (scanSignal == 2) {
 						//회원관리
 						while (1) {
 							system("cls");
@@ -131,10 +131,12 @@ public:
 					system("cls");
 					view.userPage(scanSignal);//시그널 확인 1검색대출 2 반납
 					if (scanSignal == 1) {
+						system("cls");
 						view.searchBook(returntitle);//책이름 입력
 						//검색메소드
 					}
 					else if (scanSignal == 2) {
+						system("cls");
 						view.returnBook(handler, returnBookNumber);
 						//반납메소드
 					}
