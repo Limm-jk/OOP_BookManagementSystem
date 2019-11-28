@@ -50,15 +50,6 @@ private:
 	//도서 검색
 	std::string searchBookTitle;
 
-	void addbook(std::string& addbookTitle, std::string& addauthor, std::string& addpublisher, int& addbookNumber) {
-		view.addBook(addbookTitle, addauthor, addpublisher, addbookNumber);
-		model.bookInsert(addbookTitle, addauthor, addpublisher, addbookNumber);
-	}
-	void addPerson(std::string& name, std::string& id, std::string& passwd) {
-		view.addPerson(name, id, passwd);
-		person newPerson(name, id, passwd);
-
-	}
 public:
 	void run() {
 
