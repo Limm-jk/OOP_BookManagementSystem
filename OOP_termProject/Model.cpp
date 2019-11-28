@@ -97,7 +97,7 @@ class Model {
 	std::list<person> personSearch(std::string id) {
 		std::list<person> alist;
 
-		std::list<person>::iterator pslistItr = personlist.begin();
+		pslistItr = personlist.begin();
 		while (pslistItr != personlist.end()) {
 			if ((*pslistItr).getId().find(id) != std::string::npos) {	//find(검색어) 함수는 찾는 문자열이 없을 경우 npos라는 상수를 반환함.
 																				//이 경우 찾았기 때문에 npos가 아닌것.
