@@ -311,7 +311,7 @@ public:
 			std::string author;
 			std::string publisher;
 			int bookNumber;
-			int beforIntToBool;
+			std::string beforIntToBool;
 
 			std::getline(input, line);
 			if (line == ''){
