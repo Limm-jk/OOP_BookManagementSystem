@@ -202,7 +202,7 @@ public:
 		std::cout << "" << std::endl;
 		std::cout << "" << std::endl;
 		std::cout << "1. 도서 추가" << std::endl;
-		std::cout << "2. 회원 검색/삭제" << std::endl;
+		std::cout << "2. 도서 삭제" << std::endl;
 		std::cout << "" << std::endl;
 		std::cout << "" << std::endl;
 		std::cout << "" << std::endl;
@@ -379,6 +379,28 @@ public:
 		std::cin >> deleteId;
 
 		//return true;
+	}
+	
+	void deleteBook(int bookNumber) {
+		std::cout << "-------------------------------------------------" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "2. 도서 삭제를 선택하셨습니다." << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "-------------------------------------------------" << std::endl;
+		std::cout << "" << std::endl;
+
+		std::cout << "삭제할 도서의 고유번호를 입력해 주세요 :";
+		std::cin >> bookNumber;
 	}
 
 	void faultPage() {
