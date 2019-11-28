@@ -50,7 +50,7 @@ public:
 		std::cout << "" << std::endl;
 		std::cout << "" << std::endl;
 		std::cout << "" << std::endl;
-		std::cout << "-1. 로그인 페이지로 돌아가기" << std::endl;
+		std::cout << "0. 로그인 페이지로 돌아가기" << std::endl;
 		std::cout << "-------------------------------------------------" << std::endl;
 		std::cout << "" << std::endl;
 
@@ -180,7 +180,7 @@ public:
 		std::cout << "" << std::endl;
 		std::cout << "" << std::endl;
 		std::cout << "" << std::endl;
-		std::cout << "-1. 로그인 페이지로 돌아갑니다." << std::endl;
+		std::cout << "0. 로그인 페이지로 돌아갑니다." << std::endl;
 		std::cout << "-------------------------------------------------" << std::endl;
 		std::cout << "" << std::endl;
 
@@ -208,7 +208,7 @@ public:
 		std::cout << "" << std::endl;
 		std::cout << "" << std::endl;
 		std::cout << "" << std::endl;
-		std::cout << "" << std::endl;
+		std::cout << "0. 이전 페이지로 돌아갑니다." << std::endl;
 		std::cout << "-------------------------------------------------" << std::endl;
 		std::cout << "" << std::endl;
 
@@ -235,7 +235,7 @@ public:
 		std::cout << "" << std::endl;
 		std::cout << "" << std::endl;
 		std::cout << "" << std::endl;
-		std::cout << "" << std::endl;
+		std::cout << "0. 이전 페이지로 돌아갑니다." << std::endl;
 		std::cout << "-------------------------------------------------" << std::endl;
 		std::cout << "" << std::endl;
 
