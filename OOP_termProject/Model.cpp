@@ -97,7 +97,7 @@ class Model {
 	std::list<person> personSearch(std::string id) {
 		std::list<person> alist;
 
-		pslistItr = personlist.begin();
+		std::list<person>::iterator pslistItr = personlist.begin();
 		while (pslistItr != personlist.end()) {
 			if ((*pslistItr).getId().find(id) != std::string::npos) {	//find(검색어) 함수는 찾는 문자열이 없을 경우 npos라는 상수를 반환함.
 																				//이 경우 찾았기 때문에 npos가 아닌것.
@@ -111,6 +111,7 @@ class Model {
 			}
 			pslistItr++;
 		}
+
 		return alist;					//검색결과 리스트 리턴
 	}
 	
@@ -185,8 +186,10 @@ class Model {
 							}
 						}
 					}
+					++pslistItr;
 				}
 			}
+			++bklistItr;
 		}
 		return false;
 	}
@@ -248,10 +251,12 @@ class Model {
 								}
 							}
 						}
+						++pslistItr;
 					}
 				
 				}
 			}
+			++bklistItr;
 		}
 		return false;
 	}
@@ -306,14 +311,13 @@ public:
 			std::string author;
 			std::string publisher;
 			int bookNumber;
-			std::string beforIntToBool;
-			std::getline(input, line);
-			if (line == ""){
+			int beforIntToBool;
+
+			if (std::getline(input, line, "\n")== ""){
 				break;
 			}
 			
-			std::istringstream ss;
-			ss.str(line);
+			std::istream ss(line);
 			std::string buffer, value;
 			
 			std::getline(ss, buffer, '|');
@@ -329,14 +333,15 @@ public:
 			publisher = value;
 
 			std::getline(ss, buffer, '|');
-			bookNumber = std::stoi(buffer);//정수로 변환
+			value = std::stoi(buffer);//정수로 변환
+			bookNumber = value;
 
 			std::getline(ss, buffer, '|');
 			value = buffer;
 			beforIntToBool = value;
 
 			Book book(title, author, publisher, bookNumber);
-			if (beforIntToBool == '1') {								//수동 형변환
+			if (beforIntToBool == "1") {								//수동 형변환
 				book.setLoan(true);
 			}
 			else {
@@ -361,13 +366,11 @@ public:
 			std::string loanBook1;
 			std::string loanBook2;
 			std::string loanBook3;
-			std::getline(input, line);
-			if (line == "") {
+			if (std::getline(input, line, \n) == "") {
 				break;
 			}
-			std::istringstream ss;
-			ss.str(line);
-			std::string buffer, value;
+			istream ss(line);
+			string buffer, value;
 
 			std::getline(ss, buffer, '|');
 			value = buffer;
@@ -404,7 +407,7 @@ public:
 			person.setLoanBook3(loanBook3);
 
 
-			personlist.push_back(person));
+			personlist.push_back(person);
 		}
 	}
 		/*
@@ -444,7 +447,7 @@ public:
 			std::string name = (*itr).getName();
 			std::string id = (*itr).getId;
 			std::string passwd = (*itr).getPasswd;
-			std::string loanNumber = std::to_string((*itr).getLoanNumber);
+			std::string loanNumber = std::to_string((*itr).getLoanNumber;
 			std::string loanBook1 = (*itr).getLoanBook1;
 			std::string loanBook2 = (*itr).getLoanBook2;
 			std::string loanBook3 = (*itr).getLoanBook3;
@@ -470,9 +473,6 @@ public:
 			out.close();
 		}
 	}
-
-	
-	
 };
 
 
