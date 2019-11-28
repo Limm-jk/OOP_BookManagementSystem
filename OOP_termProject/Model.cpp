@@ -275,7 +275,7 @@ class Model {
 		//찾는 id가 없으면 false리턴
 		return false;
 	}
-
+private:
 	std::string file_to_string(std::string filePath) {
 		std::ifstream in(filePath);
 		std::string s;
@@ -422,7 +422,7 @@ public:
 		}
 		*/														//더이상 쓰이지 않음. file_to_string 로 사용할것.
 
-public:
+private:
 	std::string booklist_to_string() {
 		std::string result;
 		for (std::list<Book>::iterator itr = booklist.begin(); itr != booklist.end(); itr++) {
@@ -444,7 +444,7 @@ public:
 
 		}
 	}
-public:
+private:
 	std::string personlist_to_string() {
 		std::string result = "";
 		for (std::list<person>::iterator itr = personlist.begin(); itr != personlist.end(); itr++) {
