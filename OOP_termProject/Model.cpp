@@ -62,38 +62,58 @@ class Model {
 
 
 	//book 검색
-	std::list<Book> bookSearch(int givenBookNumber) {
+	std::list<Book> bookSearchByNumber(int givenBookNumber) {
 		std::list<Book> aList;
 		for (std::list<Book>::iterator iterPos = booklist.begin(); iterPos != booklist.end(); ++iterPos)
 		{
 			if ((*iterPos).getBookNumber() == givenBookNumber) {//주어진 것과 같은 책번호를 갖는 객체를 가리킬 때 작동
-				Book abook((*iterPos).getBookTitle, (*iterPos).getAuthor, (*iterPos).getPublisher, (*iterPos).getBookNumber);//가리키는 객체를 복사
-				abook.setLoan((*iterPos).getLoan);
+				Book abook((*iterPos).getBookTitle(), (*iterPos).getAuthor(), (*iterPos).getPublisher(), (*iterPos).getBookNumber());//가리키는 객체를 복사
+				abook.setLoan((*iterPos).getLoan());
 				aList.push_back(abook);//반환할 리스트에 붙여넣기
 			}
 		}
 		return aList;//리스트 반환
 	}
 
-	/*
-	std::list<Book> bookSearch(std::string title  ) {
+	
+	std::list<Book> bookSearchByTitle(std::string title) {
+		std::list<Book> alist;
 
 		bklistItr = booklist.begin();//초기화
 		while (bklistItr != booklist.end()) {
-			if ((*bklistItr).getBookTitle() == title) {
-				return true;
+			if ((*bklistItr).getBookTitle().find(title) != std::string::npos) {	//find(검색어) 함수는 찾는 문자열이 없을 경우 npos라는 상수를 반환함.
+																				//이 경우 찾았기 때문에 npos가 아닌것.
+				Book abook((*bklistItr).getBookTitle(), (*bklistItr).getAuthor(), (*bklistItr).getPublisher(), (*bklistItr).getBookNumber());//가리키는 객체를 복사
+				abook.setLoan((*bklistItr).getLoan());
+				alist.push_back(abook);										//찾았으니 복사된 객체를 리스트 뒤에 푸시.
 			}
-			++bklistItr;
+			bklistItr++;
 		}
-		bklistItr = booklist.begin();//찾는데 실패 시에 초기화 후 리턴
-		return false;
+		bklistItr = booklist.begin();	//다 돌았으면 반복자 초기화
+		return alist;					//검색결과 리스트 리턴
 	}
-	*/
 
-	bool bookSearchNum(int bookNum) {
-		bklistItr = booklist.begin();
+	std::list<person> personSearch(std::string id) {
+		std::list<person> alist;
 
+		pslistItr = personlist.begin();
+		while (pslistItr != personlist.end()) {
+			if ((*pslistItr).getId().find(id) != std::string::npos) {	//find(검색어) 함수는 찾는 문자열이 없을 경우 npos라는 상수를 반환함.
+																				//이 경우 찾았기 때문에 npos가 아닌것.
+				person aperson((*pslistItr).getName(), (*pslistItr).getId(), (*pslistItr).getPasswd());//가리키는 객체를 복사
+				aperson.setLoanNumber((*pslistItr).getLoanNumber);
+				aperson.setLoanBook1((*pslistItr).getLoanBook1);
+				aperson.setLoanBook2((*pslistItr).getLoanBook2);
+				aperson.setLoanBook3((*pslistItr).getLoanBook3s);
+
+				alist.push_back(aperson);										//찾았으니 복사된 객체를 리스트 뒤에 푸시.
+			}
+			pslistItr++;
+		}
+		pslistItr = booklist.begin();	//다 돌았으면 반복자 초기화
+		return alist;					//검색결과 리스트 리턴
 	}
+	
 
 	bool bookDelete(int bookNumber) {
 		if (bookSearchNum(bookNumber)) {
