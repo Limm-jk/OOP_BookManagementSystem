@@ -3,6 +3,7 @@
 #include<string>
 #include<fstream>
 #include<iostream>
+#include <sstream>
 //바뀜
 class Model {
 	//book list선언(링크드리스트 - STL사용)
@@ -62,45 +63,68 @@ class Model {
 
 
 	//book 검색
-	std::list<Book> bookSearch(int givenBookNumber) {
+	std::list<Book> bookSearchByNumber(int givenBookNumber) {
 		std::list<Book> aList;
 		for (std::list<Book>::iterator iterPos = booklist.begin(); iterPos != booklist.end(); ++iterPos)
 		{
 			if ((*iterPos).getBookNumber() == givenBookNumber) {//주어진 것과 같은 책번호를 갖는 객체를 가리킬 때 작동
-				Book abook((*iterPos).getBookTitle, (*iterPos).getAuthor, (*iterPos).getPublisher, (*iterPos).getBookNumber);//가리키는 객체를 복사
-				abook.setLoan((*iterPos).getLoan);
+				Book abook((*iterPos).getBookTitle(), (*iterPos).getAuthor(), (*iterPos).getPublisher(), (*iterPos).getBookNumber());//가리키는 객체를 복사
+				abook.setLoan((*iterPos).getLoan());
 				aList.push_back(abook);//반환할 리스트에 붙여넣기
 			}
 		}
 		return aList;//리스트 반환
 	}
 
-	/*
-	std::list<Book> bookSearch(std::string title  ) {
+	
+	std::list<Book> bookSearchByTitle(std::string title) {
+		std::list<Book> alist;
 
 		bklistItr = booklist.begin();//초기화
 		while (bklistItr != booklist.end()) {
-			if ((*bklistItr).getBookTitle() == title) {
+			if ((*bklistItr).getBookTitle().find(title) != std::string::npos) {	//find(검색어) 함수는 찾는 문자열이 없을 경우 npos라는 상수를 반환함.
+																				//이 경우 찾았기 때문에 npos가 아닌것.
+				Book abook((*bklistItr).getBookTitle(), (*bklistItr).getAuthor(), (*bklistItr).getPublisher(), (*bklistItr).getBookNumber());//가리키는 객체를 복사
+				abook.setLoan((*bklistItr).getLoan());
+				alist.push_back(abook);										//찾았으니 복사된 객체를 리스트 뒤에 푸시.
+			}
+			bklistItr++;
+		}
+		bklistItr = booklist.begin();	//다 돌았으면 반복자 초기화
+		return alist;					//검색결과 리스트 리턴
+	}
+
+	std::list<person> personSearch(std::string id) {
+		std::list<person> alist;
+
+		pslistItr = personlist.begin();
+		while (pslistItr != personlist.end()) {
+			if ((*pslistItr).getId().find(id) != std::string::npos) {	//find(검색어) 함수는 찾는 문자열이 없을 경우 npos라는 상수를 반환함.
+																				//이 경우 찾았기 때문에 npos가 아닌것.
+				person aperson((*pslistItr).getName(), (*pslistItr).getId(), (*pslistItr).getPasswd());//가리키는 객체를 복사
+				aperson.setLoanNumber((*pslistItr).getLoanNumber);
+				aperson.setLoanBook1((*pslistItr).getLoanBook1);
+				aperson.setLoanBook2((*pslistItr).getLoanBook2);
+				aperson.setLoanBook3((*pslistItr).getLoanBook3);
+
+				alist.push_back(aperson);										//찾았으니 복사된 객체를 리스트 뒤에 푸시.
+			}
+			pslistItr++;
+		}
+		pslistItr = booklist.begin();	//다 돌았으면 반복자 초기화
+		return alist;					//검색결과 리스트 리턴
+	}
+	
+	//도서 삭제
+	bool bookDelete(int bookNumber) {
+		for (std::list<Book>::iterator itr = booklist.begin(); itr != booklist.end(); itr++) {
+			if ((*itr).getBookNumber() == bookNumber) {
+				booklist.erase(itr);
 				return true;
 			}
-			++bklistItr;
-		}
-		bklistItr = booklist.begin();//찾는데 실패 시에 초기화 후 리턴
-		return false;
-	}
-	*/
-
-	bool bookSearchNum(int bookNum) {
-		bklistItr = booklist.begin();
-
-	}
-
-	bool bookDelete(int bookNumber) {
-		if (bookSearchNum(bookNumber)) {
-			booklist.erase(bklistItr);
-			return true;
 		}
 		return false;
+		
 	}
 	
 	bool bookLoan(std::string id, int bookNumber) {
@@ -279,6 +303,8 @@ class Model {
 public:
 	void makeBookList(std::string givenString) {			//사용예시: makeBookList(file_to_string("book.txt"));
 		std::string line;
+		std::istringstream input;
+		input.str(givenString);
 		while (1)
 		{
 			std::string title;
@@ -286,7 +312,8 @@ public:
 			std::string publisher;
 			int bookNumber;
 			int beforIntToBool;
-			if (std::getline(givenString, line, "\n")== ""){
+
+			if (std::getline(input, line, "\n")== ""){
 				break;
 			}
 			
@@ -328,6 +355,8 @@ public:
 public:
 	void makePersonList(std::string givenString) {
 		std::string line;
+		std::istringstream input;
+		input.str(givenString);
 		while (1)//한줄 읽어서 객체 만들고 리스트에 푸시. 문자열 끝까지. \\\\ 매개변수 수정 필요?
 		{
 			std::string name;
@@ -337,7 +366,7 @@ public:
 			std::string loanBook1;
 			std::string loanBook2;
 			std::string loanBook3;
-			if (std::getline(givenString, line, \n) == "") {
+			if (std::getline(input, line, \n) == "") {
 				break;
 			}
 			istream ss(line);
@@ -444,6 +473,6 @@ public:
 			out.close();
 		}
 	}
-	
-
 };
+
+

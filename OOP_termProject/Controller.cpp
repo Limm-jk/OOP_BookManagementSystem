@@ -1,19 +1,19 @@
 #include "View.cpp"
-#include "Model.cpp"
-#include "Object.cpp"
+//#include "Model.cpp"
+//#include "Object.cpp"
 #include <stdlib.h>
 
 class Controller {
 private:
 	View view;
-	Model model;
+	//	Model model;
 	std::string SUPERUSER = "admin";
 	bool testtrue = true; // 채우기용 bool변수
 
 	//로그인
 	std::string returnid;
 	std::string returnpasswd;
-	person handler;
+	//	person handler;
 	int scanSignal;//번호입력시 번호저장 변수
 
 	//검색 입력받은 책 이름
@@ -52,45 +52,25 @@ private:
 
 public:
 	void run() {
-
-		system("cls");
 		while (1) {
-			bool login = view.initScreen(returnid, returnpasswd);	//초기화면
-			//회원 유효 및 마스터계정 확인
-			if (!login) {
+			system("cls");
+			view.initScreen(returnid, returnpasswd);	//초기화면
+			//bool login = model.loginCheck(returnid, returnpasswd);
+//			if (!login) {
 				//유효하지 않은 계정 while문 재실행
-				continue;
-			}
+//				continue;
+//			}
 			//회원계정일때
-			if (testtrue) {
-				while (1) {
-					view.userPage(scanSignal);//시그널 확인
-					while (scanSignal != 0) {
-						if (scanSignal == 1) {
-							view.searchBook(returntitle);//책이름 입력
-							//검색메소드
-						}
-						else if (scanSignal == 2) {
-							view.returnBook(handler, returnBookNumber);
-							//반납메소드
-						}
-						else if (scanSignal == 0) {
-							//종료&로그아웃
-						}
-						else {
-							//잘못된 입력
-						}
-					}
-				}
-			}
-			if (returnid == SUPERUSER) {
+			if (returnid == "admin") {
 				while (scanSignal != 0) {
+					system("cls");
 					view.managePage(scanSignal);
 					if (scanSignal == 1) {
 						//도서관리
 						while (scanSignal != 0) {
 							//scanSignal받는 view함수
 							if (scanSignal == 1) {
+								system("cls");
 								view.addBook(addbookTitle, addauthor, addpublisher, addbookNumber);
 								//모델에 addbook
 								//bookInsert(addbookTitle, addauthor, addpublisher, addbookNumber);
@@ -113,6 +93,7 @@ public:
 							//scanSignal받는 view함수
 							if (scanSignal == 1) {
 								//회원 추가.
+								system("cls");
 								view.addPerson(name, id, passwd);
 								//모델에 addbook
 								//addPerson(name, id, passwd);
@@ -137,17 +118,38 @@ public:
 					}
 				}
 			}
+
+			else {
+				while (scanSignal != 0) {
+					system("cls");
+					view.userPage(scanSignal);//시그널 확인
+					if (scanSignal == 1) {
+						view.searchBook(returntitle);//책이름 입력
+						//검색메소드
+					}
+					else if (scanSignal == 2) {
+						//							view.returnBook(handler, returnBookNumber);
+													//반납메소드
+					}
+					else if (scanSignal == 0) {
+						//종료&로그아웃
+					}
+					else {
+						//잘못된 입력
+					}
+				}
+			}
 		}
 	}
 	Controller() {
-
 	}
 };
 
+
 int main() {
-	Controller appControl;
+	Controller appc;
 	while (1) {
-		appControl.run();
+		appc.run();
 	}
 	return 0;
 }
