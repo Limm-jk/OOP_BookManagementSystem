@@ -1,4 +1,5 @@
 #include<string>
+#include"Object.h"
 
 class Book {
 private:

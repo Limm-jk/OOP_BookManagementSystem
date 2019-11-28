@@ -1,6 +1,6 @@
 #include<iostream>
 #include<list>
-#include"Object.cpp"
+#include"Object.h"
 #include <windows.h>
 
 class View {

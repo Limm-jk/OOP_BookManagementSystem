@@ -129,6 +129,9 @@
     <ClCompile Include="oop_interface.cpp" />
     <ClCompile Include="View.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Object.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
