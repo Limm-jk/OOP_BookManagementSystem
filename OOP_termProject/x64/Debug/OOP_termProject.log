@@ -1,6 +1,3 @@
 ﻿  Controller.cpp
-C:\Users\Free\Desktop\OOP_TermProject_01-master\OOP_TermProject_01\OOP_termProject\Controller.cpp(146,15): error C2512: 'person': 사용할 수 있는 적절한 기본 생성자가 없습니다.
-  Model.cpp
-C:\Users\Free\Desktop\OOP_TermProject_01-master\OOP_TermProject_01\OOP_termProject\Object.cpp(61,7): message : 'person' 선언을 참조하십시오.
-  코드를 생성하고 있습니다...
 C:\Users\Free\Desktop\OOP_TermProject_01-master\OOP_TermProject_01\OOP_termProject\Model.cpp(288,13): warning C4244: '초기화 중': 'std::streamoff'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  OOP_termProject.vcxproj -> C:\Users\Free\Desktop\OOP_TermProject_01-master\OOP_TermProject_01\x64\Debug\OOP_termProject.exe

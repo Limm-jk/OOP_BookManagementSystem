@@ -14,7 +14,7 @@ private:
 	std::string returnid;
 	std::string returnpasswd;
 	person handler;
-	int scanSignal;//번호입력시 번호저장 변수
+	int scanSignal = 1;//번호입력시 번호저장 변수
 
 	//검색 입력받은 책 이름
 	std::string returntitle;
