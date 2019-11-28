@@ -3,6 +3,7 @@
 #include<string>
 #include<fstream>
 #include<iostream>
+#include <sstream>
 //바뀜
 class Model {
 	//book list선언(링크드리스트 - STL사용)
@@ -298,6 +299,8 @@ class Model {
 public:
 	void makeBookList(std::string givenString) {			//사용예시: makeBookList(file_to_string("book.txt"));
 		std::string line;
+		std::istringstream input;
+		input.str(givenString);
 		while (1)
 		{
 			std::string title;
@@ -305,7 +308,8 @@ public:
 			std::string publisher;
 			int bookNumber;
 			int beforIntToBool;
-			if (std::getline(givenString, line, "\n")== ""){
+
+			if (std::getline(input, line, "\n")== ""){
 				break;
 			}
 			
@@ -347,6 +351,8 @@ public:
 public:
 	void makePersonList(std::string givenString) {
 		std::string line;
+		std::istringstream input;
+		input.str(givenString);
 		while (1)//한줄 읽어서 객체 만들고 리스트에 푸시. 문자열 끝까지. \\\\ 매개변수 수정 필요?
 		{
 			std::string name;
@@ -356,7 +362,7 @@ public:
 			std::string loanBook1;
 			std::string loanBook2;
 			std::string loanBook3;
-			if (std::getline(givenString, line, \n) == "") {
+			if (std::getline(input, line, \n) == "") {
 				break;
 			}
 			istream ss(line);
