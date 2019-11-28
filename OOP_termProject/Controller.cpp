@@ -1,12 +1,12 @@
 #include "View.cpp"
-//#include "Model.cpp"
-#include "Object.h"
+#include "Model.cpp"
+#include "Object.cpp"
 #include <stdlib.h>
 
 class Controller {
 private:
 	View view;
-	//	Model model;
+	Model model;
 	std::string SUPERUSER = "admin";
 	bool testtrue = true; // 채우기용 bool변수
 
@@ -87,6 +87,7 @@ public:
 							else {
 								//잘못된 입력
 							}
+							scanSignal = 0;
 						}
 					}
 					if (scanSignal == 2) {
