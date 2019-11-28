@@ -133,7 +133,7 @@ class Model {
 		while (bklistItr != booklist.end()) { 
 			if ((*bklistItr).getBookNumber() == bookNumber) { // 책이 있는지 확인
 				while (pslistItr != personlist.end()) { 
-					if ((*pslistItr).getId == id) { // id 같은 사람 찾기 
+					if ((*pslistItr).getId() == id) { // id 같은 사람 찾기 
 						int num = (*pslistItr).getLoanNumber;
 						std::string settitle = std::to_string(bookNumber);
 						// 권수가 1,2일때는 loanbook이 몇번째인지 모른다.
@@ -145,19 +145,19 @@ class Model {
 						}
 						else if (num == 1) { // 한권 빌렸을 때 
 							// 뭐가 빌렸는지 확인 
-							if ((*pslistItr).getLoanBook1 != "") {
+							if ((*pslistItr).getLoanBook1() != "") {
 								(*bklistItr).setLoan(true);
 								(*pslistItr).setLoanNumber(2);
 								(*pslistItr).setLoanBook2(settitle);
 								return true;
 							}
-							else if ((*pslistItr).getLoanBook2 != "") {
+							else if ((*pslistItr).getLoanBook2() != "") {
 								(*bklistItr).setLoan(true);
 								(*pslistItr).setLoanNumber(2);
 								(*pslistItr).setLoanBook1(settitle);
 								return true;
 							}
-							else if ((*pslistItr).getLoanBook3 != "") {
+							else if ((*pslistItr).getLoanBook3() != "") {
 								(*bklistItr).setLoan(true);
 								(*pslistItr).setLoanNumber(2);
 								(*pslistItr).setLoanBook1(settitle);
@@ -166,19 +166,19 @@ class Model {
 						}
 						else if (num == 2) { // 두권 빌렸을 때
 							// 뭐가 안빌렸는지 확인 
-							if ((*pslistItr).getLoanBook1 == "") {
+							if ((*pslistItr).getLoanBook1() == "") {
 								(*bklistItr).setLoan(true);
 								(*pslistItr).setLoanNumber(3);
 								(*pslistItr).setLoanBook1(settitle);
 								return true;
 							}
-							else if ((*pslistItr).getLoanBook2 == "") {
+							else if ((*pslistItr).getLoanBook2() == "") {
 								(*bklistItr).setLoan(true);
 								(*pslistItr).setLoanNumber(3);
 								(*pslistItr).setLoanBook2(settitle);
 								return true;
 							}
-							else if ((*pslistItr).getLoanBook3 == "") {
+							else if ((*pslistItr).getLoanBook3() == "") {
 								(*bklistItr).setLoan(true);
 								(*pslistItr).setLoanNumber(3);
 								(*pslistItr).setLoanBook3(settitle);
@@ -201,52 +201,52 @@ class Model {
 
 		while (bklistItr != booklist.end())
 		{
-			if ((*bklistItr).getBookNumber == bookNumber) { 
-				if ((*bklistItr).getLoan == true) { // 책이 대출 상태인지 확인 
+			if ((*bklistItr).getBookNumber() == bookNumber) { 
+				if ((*bklistItr).getLoan() == true) { // 책이 대출 상태인지 확인 
 					std::string gettitle = std::to_string(bookNumber);
 					while (pslistItr != personlist.end())
 					{
-						if ((*pslistItr).getId == id) { // 아이디 확인 
+						if ((*pslistItr).getId() == id) { // 아이디 확인 
 							int num = (*pslistItr).getLoanNumber(); // 대출 권수 확인 
 							if (num == 1) {
-								if ((*pslistItr).getLoanBook1 == gettitle) { // 반납할 책과 대출한 책이 일치하는지 확인 
+								if ((*pslistItr).getLoanBook1() == gettitle) { // 반납할 책과 대출한 책이 일치하는지 확인 
 									(*pslistItr).setLoanBook1(NULL);
-									(*pslistItr).setLoanNumber = 0;
-									(*bklistItr).setLoan = false;
+									(*pslistItr).setLoanNumber(0);
+									(*bklistItr).setLoan(false);
 									return true;
 								}
 							}
 							else if (num == 2) {
-								if ((*pslistItr).getLoanBook1 == gettitle) {
+								if ((*pslistItr).getLoanBook1() == gettitle) {
 									(*pslistItr).setLoanBook1(NULL);
-									(*pslistItr).setLoanNumber = 1;
-									(*bklistItr).setLoan = false;
+									(*pslistItr).setLoanNumber (1);
+									(*bklistItr).setLoan(false);
 									return true;
 								}
-								else if ((*pslistItr).getLoanBook2 == gettitle) {
+								else if ((*pslistItr).getLoanBook2() == gettitle) {
 									(*pslistItr).setLoanBook2(NULL);
-									(*pslistItr).setLoanNumber = 1;
-									(*bklistItr).setLoan = false;
+									(*pslistItr).setLoanNumber(1);
+									(*bklistItr).setLoan(false);
 									return true;
 								}
 							}
 							else if (num == 3) {
-								if ((*pslistItr).getLoanBook1 == gettitle) {
+								if ((*pslistItr).getLoanBook1() == gettitle) {
 									(*pslistItr).setLoanBook1(NULL);
-									(*pslistItr).setLoanNumber = 2;
-									(*bklistItr).setLoan = false;
+									(*pslistItr).setLoanNumber(2);
+									(*bklistItr).setLoan(false);
 									return true;
 								}
-								else if ((*pslistItr).getLoanBook2 == gettitle) {
+								else if ((*pslistItr).getLoanBook2() == gettitle) {
 									(*pslistItr).setLoanBook2(NULL);
-									(*pslistItr).setLoanNumber = 2;
-									(*bklistItr).setLoan = false;
+									(*pslistItr).setLoanNumber(2);
+									(*bklistItr).setLoan(false);
 									return true;
 								}
-								else if ((*pslistItr).getLoanBook3 == gettitle) {
+								else if ((*pslistItr).getLoanBook3() == gettitle) {
 									(*pslistItr).setLoanBook3(NULL);
-									(*pslistItr).setLoanNumber = 2;
-									(*bklistItr).setLoan = false;
+									(*pslistItr).setLoanNumber(2);
+									(*bklistItr).setLoan(false);
 									return true;
 								}
 							}
