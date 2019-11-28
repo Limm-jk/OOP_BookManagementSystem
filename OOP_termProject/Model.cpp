@@ -248,7 +248,7 @@ class Model {
 		return false;
 	}
 
-	string file_to_string(string filePath) {
+	std::string file_to_string(std::string filePath) {
 		std::ifstream in(filePath);
 		std::string s;
 
@@ -422,7 +422,7 @@ public:
 	}
 	void string_to_file(std::string bookString, std::string personString) {//파일 업데이트. 프로그램 종료 시 반드시 수행할것. 예): string_to_file(booklist_to_string(), personlist_to_string());
 		std::fstream out;
-		out.open("booklist.txt", ios_base::out | ios_base::trunc);	//파일 초기화하고 쓰기모드로 열기
+		out.open("booklist.txt", std::ios_base::out | std::ios_base::trunc);	//파일 초기화하고 쓰기모드로 열기
 
 		if (out.is_open()) {
 			out << bookString;										//파일에 새 내용 저장
