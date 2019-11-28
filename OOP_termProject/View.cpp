@@ -279,8 +279,8 @@ public:
 			std::cin.clear();
 			std::cin.ignore();
 			std::cin >> bookN;
-			if (!std::cin) {
-				break;;
+			if (std::cin) {
+				break;
 			}
 		}
 		/*
