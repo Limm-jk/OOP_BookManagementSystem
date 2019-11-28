@@ -105,7 +105,7 @@ class Model {
 				aperson.setLoanNumber((*pslistItr).getLoanNumber);
 				aperson.setLoanBook1((*pslistItr).getLoanBook1);
 				aperson.setLoanBook2((*pslistItr).getLoanBook2);
-				aperson.setLoanBook3((*pslistItr).getLoanBook3s);
+				aperson.setLoanBook3((*pslistItr).getLoanBook3);
 
 				alist.push_back(aperson);										//찾았으니 복사된 객체를 리스트 뒤에 푸시.
 			}
@@ -115,13 +115,16 @@ class Model {
 		return alist;					//검색결과 리스트 리턴
 	}
 	
-
+	//도서 삭제
 	bool bookDelete(int bookNumber) {
-		if (bookSearchNum(bookNumber)) {
-			booklist.erase(bklistItr);
-			return true;
+		for (std::list<Book>::iterator itr = booklist.begin(); itr != booklist.end(); itr++) {
+			if ((*itr).getBookNumber() == bookNumber) {
+				booklist.erase(itr);
+				return true;
+			}
 		}
 		return false;
+		
 	}
 	
 	bool bookLoan(std::string id, int bookNumber) {
@@ -466,6 +469,9 @@ public:
 			out.close();
 		}
 	}
-	
 
+	
+	
 };
+
+
