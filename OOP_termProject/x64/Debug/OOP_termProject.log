@@ -1,22 +1,3 @@
-﻿  Object.cpp
-  Controller.cpp
-C:\Users\songkey\Desktop\oop\OOP_TermProject_01\OOP_termProject\Object.cpp(3,12): error C2011:  'Book': 'class' 형식 재정의
-C:\Users\songkey\Desktop\oop\OOP_TermProject_01\OOP_termProject\Object.cpp(3): message :  'Book' 선언을 참조하십시오.
-C:\Users\songkey\Desktop\oop\OOP_TermProject_01\OOP_termProject\Object.cpp(60,14): error C2011:  'person': 'class' 형식 재정의
-C:\Users\songkey\Desktop\oop\OOP_TermProject_01\OOP_termProject\Object.cpp(60): message :  'person' 선언을 참조하십시오.
-C:\Users\songkey\Desktop\oop\OOP_TermProject_01\OOP_termProject\Controller.cpp(16,16): error C2079:  'Controller::handler'은(는) 정의되지 않은 class 'person'을(를) 사용합니다.
-C:\Users\songkey\Desktop\oop\OOP_TermProject_01\OOP_termProject\Controller.cpp(134,1): error C2664:  'void View::returnBook(std::list<Book,std::allocator<_Ty>>,int &)': 인수 1을(를) 'int'에서 'person'(으)로 변환할 수 없습니다.
-C:\Users\songkey\Desktop\oop\OOP_TermProject_01\OOP_termProject\Controller.cpp(134,1): error C2664:         with
-C:\Users\songkey\Desktop\oop\OOP_TermProject_01\OOP_termProject\Controller.cpp(134,1): error C2664:         [
-C:\Users\songkey\Desktop\oop\OOP_TermProject_01\OOP_termProject\Controller.cpp(134,1): error C2664:             _Ty=Book
-C:\Users\songkey\Desktop\oop\OOP_TermProject_01\OOP_termProject\Controller.cpp(134,1): error C2664:         ]
-C:\Users\songkey\Desktop\oop\OOP_TermProject_01\OOP_termProject\Controller.cpp(134,1): message :  정의되지 않은 형식 'person'을(를) 사용했습니다.
-  Model.cpp
-C:\Users\songkey\Desktop\oop\OOP_TermProject_01\OOP_termProject\Object.cpp(60,7): message :  'person' 선언을 참조하십시오.
-C:\Users\songkey\Desktop\oop\OOP_TermProject_01\OOP_termProject\Model.cpp(105,1): error C3867:  'person::getLoanNumber': 비표준 구문입니다. '&'를 사용하여 멤버 포인터를 만드세요.
-C:\Users\songkey\Desktop\oop\OOP_TermProject_01\OOP_termProject\Model.cpp(106,1): error C3867:  'person::getLoanBook1': 비표준 구문입니다. '&'를 사용하여 멤버 포인터를 만드세요.
-C:\Users\songkey\Desktop\oop\OOP_TermProject_01\OOP_termProject\Model.cpp(107,1): error C3867:  'person::getLoanBook2': 비표준 구문입니다. '&'를 사용하여 멤버 포인터를 만드세요.
-C:\Users\songkey\Desktop\oop\OOP_TermProject_01\OOP_termProject\Model.cpp(108,1): error C3867:  'person::getLoanBook3': 비표준 구문입니다. '&'를 사용하여 멤버 포인터를 만드세요.
-C:\Users\songkey\Desktop\oop\OOP_TermProject_01\OOP_termProject\Model.cpp(137,1): error C3867:  'person::getLoanNumber': 비표준 구문입니다. '&'를 사용하여 멤버 포인터를 만드세요.
-  코드를 생성하고 있습니다...
-C:\Users\songkey\Desktop\oop\OOP_TermProject_01\OOP_termProject\Model.cpp(288,13): warning C4244:  '초기화 중': 'std::streamoff'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+﻿  Model.cpp
+C:\Users\Free\Desktop\OOP_TermProject_01-master\OOP_TermProject_01\OOP_termProject\Model.cpp(288,13): warning C4244: '초기화 중': 'std::streamoff'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  OOP_termProject.vcxproj -> C:\Users\Free\Desktop\OOP_TermProject_01-master\OOP_TermProject_01\x64\Debug\OOP_termProject.exe
