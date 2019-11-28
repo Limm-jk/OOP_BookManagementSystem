@@ -54,6 +54,7 @@ public:
 	void run() {
 		while (1) {
 			system("cls");
+			scanSignal = 1;
 			view.initScreen(returnid, returnpasswd);	//초기화면
 			//bool login = model.loginCheck(returnid, returnpasswd);
 //			if (!login) {
@@ -62,12 +63,12 @@ public:
 //			}
 			//관리자계정일때
 			if (returnid == "admin") {
-				while (scanSignal != 0) {
+				while (1) {
 					system("cls");
 					view.managePage(scanSignal);//1도서 2회원
 					if (scanSignal == 1) {
 						//도서관리
-						while (scanSignal != 0) {
+						while (1) {
 							system("cls");
 							view.manageBook(scanSignal);
 							if (scanSignal == 1) {
@@ -83,15 +84,16 @@ public:
 							}
 							else if (scanSignal == 0) {
 								//종료합니당
+								break;
 							}
 							else {
 								//잘못된 입력
 							}
 						}
 					}
-					if (scanSignal == 2) {
+					else if (scanSignal == 2) {
 						//회원관리
-						while (scanSignal != 0) {
+						while (1) {
 							system("cls");
 							view.managePerson(scanSignal);
 							if (scanSignal == 1) {
@@ -107,6 +109,7 @@ public:
 							}
 							else if (scanSignal == 0) {
 								//종료합니당
+								break;
 							}
 							else {
 								//잘못된 입력
@@ -115,6 +118,7 @@ public:
 					}
 					else if (scanSignal == 0) {
 						//종료 로그아웃
+						break;
 					}
 					else {
 						//잘못된 입력
@@ -123,19 +127,22 @@ public:
 			}
 
 			else {
-				while (scanSignal != 0) {
+				while (1) {
 					system("cls");
 					view.userPage(scanSignal);//시그널 확인 1검색대출 2 반납
 					if (scanSignal == 1) {
+						system("cls");
 						view.searchBook(returntitle);//책이름 입력
 						//검색메소드
 					}
 					else if (scanSignal == 2) {
+						system("cls");
 						view.returnBook(handler, returnBookNumber);
 						//반납메소드
 					}
 					else if (scanSignal == 0) {
 						//종료&로그아웃
+						break;
 					}
 					else {
 						//잘못된 입력
