@@ -429,7 +429,7 @@ public:
 			out.close();
 		}
 
-		out.open("personlist.txt", ios_base::out | ios_base::trunc);
+		out.open("personlist.txt", std::ios_base::out | std::ios_base::trunc);
 
 		if (out.is_open()) {
 			out << personString;
