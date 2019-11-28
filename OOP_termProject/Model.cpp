@@ -275,15 +275,17 @@ class Model {
 public:
 	void makeBookList(std::string givenString) {			//사용예시: makeBookList(file_to_string("book.txt"));
 		std::string line;
-		while (givenString)
+		while (1)
 		{
 			std::string title;
 			std::string author;
 			std::string publisher;
 			int bookNumber;
 			int beforIntToBool;
+			if ( std::getline(givenString, line, \n)== ""){
+				break;
+			}
 			
-			std::getline(givenString, line, \n);
 			std::istream ss(line);
 			std::string buffer, value;
 			
@@ -300,15 +302,15 @@ public:
 			publisher = value;
 
 			std::getline(ss, buffer, '|');
-			value = atoi(buffer.c_str());//정수로 변환
+			value = std::stoi(buffer);//정수로 변환
 			bookNumber = value;
 
 			std::getline(ss, buffer, '|');
-			value = atoi(buffer.c_str());//일단 정수로 변환
+			value = buffer;
 			beforIntToBool = value;
 
 			Book book(title, author, publisher, bookNumber);
-			if (beforIntToBool == 1) {								//수동 형변환
+			if (beforIntToBool == "1") {								//수동 형변환
 				book.setLoan(true);
 			}
 			else {
@@ -322,7 +324,7 @@ public:
 public:
 	void makePersonList(std::string givenString) {
 		std::string line;
-		while (givenString)//한줄 읽어서 객체 만들고 리스트에 푸시. 문자열 끝까지. \\\\ 매개변수 수정 필요?
+		while (1)//한줄 읽어서 객체 만들고 리스트에 푸시. 문자열 끝까지. \\\\ 매개변수 수정 필요?
 		{
 			std::string name;
 			std::string id;
@@ -331,8 +333,9 @@ public:
 			std::string loanBook1;
 			std::string loanBook2;
 			std::string loanBook3;
-
-			std::getline(givenString, line, \n);
+			if (std::getline(givenString, line, \n) == "") {
+				break;
+			}
 			istream ss(line);
 			string buffer, value;
 
@@ -349,7 +352,7 @@ public:
 			passwd = value;
 
 			std::getline(ss, buffer, '|');
-			value = atoi(buffer.c_str());//정수로 변환
+			value = stoi(buffer);//정수로 변환
 			loanNumber = value;
 
 			std::getline(ss, buffer, '|');
@@ -425,14 +428,14 @@ public:
 		out.open("booklist.txt", std::ios_base::out | std::ios_base::trunc);	//파일 초기화하고 쓰기모드로 열기
 
 		if (out.is_open()) {
-			out << bookString;										//파일에 새 내용 저장
-			out.close();
+			out << bookString+"\n";											//파일에 새 내용 저장, 맨 마지막에 줄바꿈문자 넣어서 마지막이라는 것 표기. 
+			out.close();													//마지막을 표기한 이유는 파일 읽을 때 사용하기 위함.
 		}
 
 		out.open("personlist.txt", std::ios_base::out | std::ios_base::trunc);
 
 		if (out.is_open()) {
-			out << personString;
+			out << personString+"\n";
 			out.close();
 		}
 	}
