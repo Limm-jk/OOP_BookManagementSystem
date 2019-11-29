@@ -16,8 +16,9 @@ private:
 	person handler;
 	int scanSignal = 1;//번호입력시 번호저장 변수
 
-	//검색 입력받은 책 이름
+	//검색/대출 입력받은 책 이름
 	std::string returntitle;
+	int loanNumber;
 
 	//도서반납
 	int returnBookNumber;
@@ -48,7 +49,7 @@ private:
 	int delBookNumber;
 
 	//도서 검색
-	std::string searchBookTitle;
+	std::list<Book> searchBooklist;
 
 public:
 	void run() {
@@ -56,11 +57,10 @@ public:
 			system("cls");
 			scanSignal = 1;
 			view.initScreen(returnid, returnpasswd);	//초기화면
-			//bool login = model.loginCheck(returnid, returnpasswd);
-//			if (!login) {
-				//유효하지 않은 계정 while문 재실행
-//				continue;
-//			}
+			bool login = model.loginCheck(returnid, returnpasswd);
+			if (!login) {
+				continue;
+			}
 			//관리자계정일때
 			if (returnid == "admin") {
 				while (1) {
@@ -76,11 +76,11 @@ public:
 								system("cls");
 								view.addBook(addbookTitle, addauthor, addpublisher, addbookNumber);
 								//모델에 addbook
-								//bookInsert(addbookTitle, addauthor, addpublisher, addbookNumber);
+								model.bookInsert(addbookTitle, addauthor, addpublisher, addbookNumber);
 							}
 							else if (scanSignal == 2) {
-								//삭제? view.delBook(delBookNumber);
-								//model.bookDelete(delBookNumber);
+								//view.delBook(delBookNumber);
+								model.bookDelete(delBookNumber);
 							}
 							else if (scanSignal == 0) {
 								//종료합니당
@@ -101,11 +101,11 @@ public:
 								system("cls");
 								view.addPerson(name, id, passwd);
 								//모델에 addbook
-								//addPerson(name, id, passwd);
+								model.addPerson(name, id, passwd);
 							}
 							else if (scanSignal == 2) {
-								//회원삭제? view.delPerson(delId);
-								//model.personDelete(delId);
+								view.deletePerson(delId);
+								model.personDelete(delId);
 							}
 							else if (scanSignal == 0) {
 								//종료합니당
@@ -133,7 +133,14 @@ public:
 					if (scanSignal == 1) {
 						system("cls");
 						view.searchBook(returntitle);//책이름 입력
-						//검색메소드
+						searchBooklist = model.bookSearchByTitle(returntitle);
+						view.loanBook(searchBooklist, loanNumber);
+						if (model.bookLoan(returnid, loanNumber)) {
+							//성공
+						}
+						else {
+							//책없음
+						}
 					}
 					else if (scanSignal == 2) {
 						system("cls");

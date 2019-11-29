@@ -15,7 +15,7 @@ class Model {
 	std::list<Book>::iterator bklistItr = booklist.begin();
 	std::list<person>::iterator pslistItr = personlist.begin();
 
-
+public:
 
 	//·Î±×ÀÎ check
 	bool loginCheck(std::string id, std::string passwd) {
