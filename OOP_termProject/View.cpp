@@ -56,8 +56,11 @@ public:
 
 
 		input = 1;
-		while (input != 0) {
+		while (1) {
 			std::cin >> input;
+			if (std::cin) {
+				break;
+			}
 			if (!std::cin) {
 				std::cout << "숫자만 입력해 주세요" << std::endl;
 				std::cin.clear();
@@ -115,9 +118,12 @@ public:
 
 		
 		bookNumber = 1;
-		while (bookNumber != 0) {
+		while (1) {
 			std::cout << "대출할 책의 고유번호를 입력해 주세요 : ";
 			std::cin >> bookNumber;
+			if (std::cin) {
+				break;
+			}
 			if (!std::cin) {
 				std::cout << "대출할 책의 고유번호는 숫자만 입력해 주세요" << std::endl;
 				std::cin.clear();
@@ -152,9 +158,12 @@ public:
 		std::cout << "" << std::endl;
 
 		bookNumber = 1;
-		while (bookNumber != 0) {
+		while (1) {
 			std::cout << "반납할 책의 고유번호를 입력해주세요 : ";
 			std::cin >> bookNumber;
+			if (std::cin) {
+				break;
+			}
 			if (!std::cin) {
 				std::cout << "반납할 책의 고유번호는 숫자만 입력해 주세요" << std::endl;
 				std::cin.clear();
@@ -203,15 +212,22 @@ public:
 		std::cout << "-------------------------------------------------" << std::endl;
 		std::cout << "" << std::endl;
 
-		input = 1;
-		while (input != 0) {
-			std::cin >> input;
+
+
+		int t = 1;
+		while (1) {
+			std::cin >> t;
+			if (std::cin) {
+				break;
+			}
 			if (!std::cin) {
 				std::cout << "숫자만 입력해 주세요" << std::endl;
 				std::cin.clear();
 				std::cin.ignore(INT_MAX, '\n');
 			}
 		}
+
+		input = t;
 		/*if (input == 1 || input == 2 || input == -1) {
 			return true;
 		}
@@ -240,8 +256,11 @@ public:
 		std::cout << "" << std::endl;
 
 		input = 1;
-		while (input != 0) {
+		while (1) {
 			std::cin >> input;
+			if (std::cin) {
+				break;
+			}
 			if (!std::cin) {
 				std::cout << "숫자만 입력해 주세요" << std::endl;
 				std::cin.clear();
@@ -276,8 +295,11 @@ public:
 
 
 		input = 1;
-		while (input != 0) {
+		while (1) {
 			std::cin >> input;
+			if (std::cin) {
+				break;
+			}
 			if (!std::cin) {
 				std::cout << "숫자만 입력해 주세요" << std::endl;
 				std::cin.clear();
@@ -320,9 +342,12 @@ public:
 		
 		//숫자만 입력 예외처리
 		bookN = 1;
-		while(bookN != 0){
+		while(1){
 			std::cout << "추가할 도서의 책번호를 입력해 주세요 : ";
 			std::cin >> bookN;
+			if (std::cin) {
+				break;
+			}
 			if (!std::cin) {
 				std::cout << "도서의 책 번호는 숫자만 입력해 주세요" << std::endl;
 				std::cin.clear();
@@ -392,9 +417,12 @@ public:
 		std::cout << "" << std::endl;
 
 		returnNumber = 1;
-		while (returnNumber != 0) {
+		while (1) {
 			std::cout << "반납할 책의 고유번호를 입력해주세요 : ";
 			std::cin >> returnNumber;
+			if (std::cin) {
+				break;
+			}
 			if (!std::cin) {
 				std::cout << "반납할 책의 고유번호는 숫자만 입력해 주세요" << std::endl;
 				std::cin.clear();
@@ -454,9 +482,12 @@ public:
 		std::cout << "" << std::endl;
 
 		bookNumber = 1;
-		while (bookNumber != 0) {
+		while (1) {
 			std::cout << "삭제할 책의 고유번호를 입력해주세요 : ";
 			std::cin >> bookNumber;
+			if (std::cin) {
+				break;
+			}
 			if (!std::cin) {
 				std::cout << "삭제할 책의 고유번호는 숫자만 입력해 주세요" << std::endl;
 				std::cin.clear();
