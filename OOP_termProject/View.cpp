@@ -54,8 +54,6 @@ public:
 		std::cout << "-------------------------------------------------" << std::endl;
 		std::cout << "" << std::endl;
 
-
-		input = 1;
 		while (1) {
 			std::cin >> input;
 			if (std::cin) {
@@ -116,8 +114,6 @@ public:
 		std::cout << "-------------------------------------------------" << std::endl;
 		std::cout << "" << std::endl;
 
-		
-		bookNumber = 1;
 		while (1) {
 			std::cout << "대출할 책의 고유번호를 입력해 주세요 : ";
 			std::cin >> bookNumber;
@@ -157,7 +153,6 @@ public:
 		std::cout << "-------------------------------------------------" << std::endl;
 		std::cout << "" << std::endl;
 
-		bookNumber = 1;
 		while (1) {
 			std::cout << "반납할 책의 고유번호를 입력해주세요 : ";
 			std::cin >> bookNumber;
@@ -213,10 +208,8 @@ public:
 		std::cout << "" << std::endl;
 
 
-
-		int t = 1;
 		while (1) {
-			std::cin >> t;
+			std::cin >> input;
 			if (std::cin) {
 				break;
 			}
@@ -226,8 +219,6 @@ public:
 				std::cin.ignore(INT_MAX, '\n');
 			}
 		}
-
-		input = t;
 		/*if (input == 1 || input == 2 || input == -1) {
 			return true;
 		}
@@ -255,7 +246,6 @@ public:
 		std::cout << "-------------------------------------------------" << std::endl;
 		std::cout << "" << std::endl;
 
-		input = 1;
 		while (1) {
 			std::cin >> input;
 			if (std::cin) {
@@ -294,7 +284,6 @@ public:
 		std::cout << "" << std::endl;
 
 
-		input = 1;
 		while (1) {
 			std::cin >> input;
 			if (std::cin) {
@@ -341,7 +330,6 @@ public:
 		std::cin >> publisher;
 		
 		//숫자만 입력 예외처리
-		bookN = 1;
 		while(1){
 			std::cout << "추가할 도서의 책번호를 입력해 주세요 : ";
 			std::cin >> bookN;
@@ -398,25 +386,29 @@ public:
 	void returnBook(std::list<Book> searchBooklist, int& returnNumber) {
 		std::list<Book>::iterator list = searchBooklist.begin();
 		std::cout << "-------------------------------------------------" << std::endl;
-		std::cout << "고유번호    제목      저자   출판사      대출여부" << std::endl;
+		std::cout << "고유번호     제목      저자      출판사     대출여부" << std::endl;
 
 		while (list != searchBooklist.end()) {
 			std::cout << (*list).getBookNumber();
-			std::cout << "	";
+			std::cout << "           ";
 			std::cout << (*list).getBookTitle();
-			std::cout << "	";
+			std::cout << "	      ";
 			std::cout << (*list).getAuthor();
-			std::cout << "	";
+			std::cout << "	      ";
 			std::cout << (*list).getPublisher();
-			std::cout << "	";
-			std::cout << (*list).getLoan() << std::endl;
+			std::cout << "	      ";
+			if ((*list).getLoan() == true) {
+				std::cout << "대출가능" << std::endl;
+			}
+			else {
+				std::cout << "대출불가" << std::endl;
+			}
 			std::cout << "" << std::endl;
 		}
 		std::cout << "" << std::endl;
 		std::cout << "-------------------------------------------------" << std::endl;
 		std::cout << "" << std::endl;
 
-		returnNumber = 1;
 		while (1) {
 			std::cout << "반납할 책의 고유번호를 입력해주세요 : ";
 			std::cin >> returnNumber;
@@ -481,7 +473,6 @@ public:
 		std::cout << "-------------------------------------------------" << std::endl;
 		std::cout << "" << std::endl;
 
-		bookNumber = 1;
 		while (1) {
 			std::cout << "삭제할 책의 고유번호를 입력해주세요 : ";
 			std::cin >> bookNumber;
