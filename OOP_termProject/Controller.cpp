@@ -85,6 +85,7 @@ public:
 							}
 							else {
 								//잘못된 입력
+								view.faultPage();
 							}
 						}
 					}
@@ -111,6 +112,7 @@ public:
 							}
 							else {
 								//잘못된 입력
+								view.faultPage();
 							}
 						}
 					}
@@ -120,6 +122,7 @@ public:
 					}
 					else {
 						//잘못된 입력
+						view.faultPage();
 					}
 				}
 			}
@@ -160,6 +163,7 @@ public:
 					}
 					else {
 						//잘못된 입력
+						view.faultPage();
 					}
 				}
 			}
