@@ -57,9 +57,7 @@ public:
 			scanSignal = 1;
 			view.initScreen(returnid, returnpasswd);	//초기화면
 			bool login = model.loginCheck(returnid, returnpasswd);
-			if (!login) {
-				continue;
-			}
+
 			//관리자계정일때
 			if (returnid == "admin") {
 				while (1) {
@@ -91,6 +89,7 @@ public:
 						}
 					}
 					else if (scanSignal == 2) {
+
 						//회원관리
 						while (1) {
 							system("cls");
@@ -126,6 +125,9 @@ public:
 			}
 
 			else {
+				if (!login) {
+					continue;
+				}
 				while (1) {
 					system("cls");
 					view.userPage(scanSignal);//시그널 확인 1검색대출 2 반납
