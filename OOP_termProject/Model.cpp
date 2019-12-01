@@ -61,6 +61,16 @@ public:
 		return true;
 	}
 
+	//id로 person객체 찾기
+	person* idToPerson(std::string id) {
+		person* rtps;
+		for (std::list<person>::iterator itr = personlist.begin(); itr != personlist.end(); itr++) {
+			if ((*itr).getId() == id) {
+				rtps = &(*itr);
+				return rtps;
+			}
+		}
+	}
 
 	//book 검색
 	std::list<Book> bookSearchByNumber(int givenBookNumber) {
