@@ -79,7 +79,7 @@ public:
 								model.bookInsert(addbookTitle, addauthor, addpublisher, addbookNumber);
 							}
 							else if (scanSignal == 2) {
-								//view.delBook(delBookNumber);
+								view.deleteBook(delBookNumber);
 								model.bookDelete(delBookNumber);
 							}
 							else if (scanSignal == 0) {
@@ -145,6 +145,12 @@ public:
 					else if (scanSignal == 2) {
 						system("cls");
 						view.returnBook(handler, returnBookNumber);
+						if (model.bookReturn(handler.getId, returnBookNumber)) {
+							//성공
+						}
+						else {
+							//책없음
+						}
 						//반납메소드
 					}
 					else if (scanSignal == 0) {
