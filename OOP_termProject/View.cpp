@@ -54,14 +54,16 @@ public:
 		std::cout << "-------------------------------------------------" << std::endl;
 		std::cout << "" << std::endl;
 
-		std::cin >> input;
-		/*if (input == 1 || input == 2 || input == -1) {
-			return true;
-		}
-		else {
-			return false;
-		}*/
 
+		input = 1;
+		while (input != 0) {
+			std::cin >> input;
+			if (!std::cin) {
+				std::cout << "숫자만 입력해 주세요" << std::endl;
+				std::cin.clear();
+				std::cin.ignore(INT_MAX, '\n');
+			}
+		}
 	}
 
 	void searchBook(std::string& bookTitle) {
@@ -111,8 +113,17 @@ public:
 		std::cout << "-------------------------------------------------" << std::endl;
 		std::cout << "" << std::endl;
 
-		std::cout << "대출할 책의 고유번호를 입력해 주세요 : ";
-		std::cin >> bookNumber;
+		
+		bookNumber = 1;
+		while (bookNumber != 0) {
+			std::cout << "대출할 책의 고유번호를 입력해 주세요 : ";
+			std::cin >> bookNumber;
+			if (!std::cin) {
+				std::cout << "대출할 책의 고유번호는 숫자만 입력해 주세요" << std::endl;
+				std::cin.clear();
+				std::cin.ignore(INT_MAX, '\n');
+			}
+		}
 
 		/*for (std::list<Book>::iterator test = searchBooklist.begin(); test != searchBooklist.end(); ++test) {
 			if ((*test).getBookNumber() == bookNumber) {
@@ -140,8 +151,16 @@ public:
 		std::cout << "-------------------------------------------------" << std::endl;
 		std::cout << "" << std::endl;
 
-		std::cout << "반납할 책의 고유번호를 입력해주세요 : ";
-		std::cin >> bookNumber;
+		bookNumber = 1;
+		while (bookNumber != 0) {
+			std::cout << "반납할 책의 고유번호를 입력해주세요 : ";
+			std::cin >> bookNumber;
+			if (!std::cin) {
+				std::cout << "반납할 책의 고유번호는 숫자만 입력해 주세요" << std::endl;
+				std::cin.clear();
+				std::cin.ignore(INT_MAX, '\n');
+			}
+		}
 
 		//if (Person.getLoanBook1() != "") {
 		//	int a = atoi(Person.getLoanBook1().c_str());
@@ -184,7 +203,15 @@ public:
 		std::cout << "-------------------------------------------------" << std::endl;
 		std::cout << "" << std::endl;
 
-		std::cin >> input;
+		input = 1;
+		while (input != 0) {
+			std::cin >> input;
+			if (!std::cin) {
+				std::cout << "숫자만 입력해 주세요" << std::endl;
+				std::cin.clear();
+				std::cin.ignore(INT_MAX, '\n');
+			}
+		}
 		/*if (input == 1 || input == 2 || input == -1) {
 			return true;
 		}
@@ -212,7 +239,15 @@ public:
 		std::cout << "-------------------------------------------------" << std::endl;
 		std::cout << "" << std::endl;
 
-		std::cin >> input;
+		input = 1;
+		while (input != 0) {
+			std::cin >> input;
+			if (!std::cin) {
+				std::cout << "숫자만 입력해 주세요" << std::endl;
+				std::cin.clear();
+				std::cin.ignore(INT_MAX, '\n');
+			}
+		}
 		/*if (input == 1 || input == 2 || input == -1) {
 			return true;
 		}
@@ -239,7 +274,16 @@ public:
 		std::cout << "-------------------------------------------------" << std::endl;
 		std::cout << "" << std::endl;
 
-		std::cin >> input;
+
+		input = 1;
+		while (input != 0) {
+			std::cin >> input;
+			if (!std::cin) {
+				std::cout << "숫자만 입력해 주세요" << std::endl;
+				std::cin.clear();
+				std::cin.ignore(INT_MAX, '\n');
+			}
+		}
 		/*if (input == 1 || input == 2 || input == -1) {
 			return true;
 		}
@@ -274,13 +318,15 @@ public:
 		std::cout << "추가할 도서의 출판사를 입력해 주세요 : ";
 		std::cin >> publisher;
 		
-		while(1){
+		//숫자만 입력 예외처리
+		bookN = 1;
+		while(bookN != 0){
 			std::cout << "추가할 도서의 책번호를 입력해 주세요 : ";
-			std::cin.clear();
-			std::cin.ignore();
 			std::cin >> bookN;
-			if (std::cin) {
-				break;
+			if (!std::cin) {
+				std::cout << "도서의 책 번호는 숫자만 입력해 주세요" << std::endl;
+				std::cin.clear();
+				std::cin.ignore(INT_MAX, '\n');
 			}
 		}
 		/*
@@ -345,8 +391,16 @@ public:
 		std::cout << "-------------------------------------------------" << std::endl;
 		std::cout << "" << std::endl;
 
-		std::cout << "반납할 책의 고유 번호를 입력해 주세요";
-		std::cin >> returnNumber;
+		returnNumber = 1;
+		while (returnNumber != 0) {
+			std::cout << "반납할 책의 고유번호를 입력해주세요 : ";
+			std::cin >> returnNumber;
+			if (!std::cin) {
+				std::cout << "반납할 책의 고유번호는 숫자만 입력해 주세요" << std::endl;
+				std::cin.clear();
+				std::cin.ignore(INT_MAX, '\n');
+			}
+		}
 		
 		/*for (std::list<Book>::iterator test = searchBooklist.begin(); test != searchBooklist.end(); ++test) {
 			if ((*test).getBookNumber() == returnNumber) {
@@ -399,8 +453,16 @@ public:
 		std::cout << "-------------------------------------------------" << std::endl;
 		std::cout << "" << std::endl;
 
-		std::cout << "삭제할 도서의 고유번호를 입력해 주세요 :";
-		std::cin >> bookNumber;
+		bookNumber = 1;
+		while (bookNumber != 0) {
+			std::cout << "삭제할 책의 고유번호를 입력해주세요 : ";
+			std::cin >> bookNumber;
+			if (!std::cin) {
+				std::cout << "삭제할 책의 고유번호는 숫자만 입력해 주세요" << std::endl;
+				std::cin.clear();
+				std::cin.ignore(INT_MAX, '\n');
+			}
+		}
 	}
 
 	void faultPage() {

@@ -28,7 +28,6 @@ private:
 	std::string id;
 	std::string passwd;
 
-	int loanNumber;
 	std::string loanBook1;
 	std::string loanBook2;
 	std::string loanBook3;
@@ -145,7 +144,7 @@ public:
 					else if (scanSignal == 2) {
 						system("cls");
 						view.returnBook(handler, returnBookNumber);
-						if (model.bookReturn(handler.getId, returnBookNumber)) {
+						if (model.bookReturn(handler.getId(), returnBookNumber)) {
 							//¼º°ø
 						}
 						else {
