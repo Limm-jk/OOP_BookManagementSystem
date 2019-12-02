@@ -125,7 +125,9 @@
   <ItemGroup>
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="Controller.cpp" />
-    <ClCompile Include="Model.cpp" />
+    <ClCompile Include="Model.cpp">
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
     <ClCompile Include="oop_interface.cpp" />
     <ClCompile Include="View.cpp" />
   </ItemGroup>
