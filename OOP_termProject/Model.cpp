@@ -220,7 +220,19 @@ public:
 							int num = (*pslistItr).getLoanNumber(); // 대출 권수 확인 
 							if (num == 1) {
 								if ((*pslistItr).getLoanBook1() == gettitle) { // 반납할 책과 대출한 책이 일치하는지 확인 
-									(*pslistItr).setLoanBook1(NULL);
+									(*pslistItr).setLoanBook1("");
+									(*pslistItr).setLoanNumber(0);
+									(*bklistItr).setLoan(false);
+									return true;
+								}
+								else if ((*pslistItr).getLoanBook2() == gettitle) {
+									(*pslistItr).setLoanBook2("");
+									(*pslistItr).setLoanNumber(0);
+									(*bklistItr).setLoan(false);
+									return true;
+								}
+								else if ((*pslistItr).getLoanBook3() == gettitle) {
+									(*pslistItr).setLoanBook3("");
 									(*pslistItr).setLoanNumber(0);
 									(*bklistItr).setLoan(false);
 									return true;
@@ -228,13 +240,19 @@ public:
 							}
 							else if (num == 2) {
 								if ((*pslistItr).getLoanBook1() == gettitle) {
-									(*pslistItr).setLoanBook1(NULL);
+									(*pslistItr).setLoanBook1("");
 									(*pslistItr).setLoanNumber (1);
 									(*bklistItr).setLoan(false);
 									return true;
 								}
 								else if ((*pslistItr).getLoanBook2() == gettitle) {
-									(*pslistItr).setLoanBook2(NULL);
+									(*pslistItr).setLoanBook2("");
+									(*pslistItr).setLoanNumber(1);
+									(*bklistItr).setLoan(false);
+									return true;
+								}
+								else if ((*pslistItr).getLoanBook3() == gettitle) {
+									(*pslistItr).setLoanBook3("");
 									(*pslistItr).setLoanNumber(1);
 									(*bklistItr).setLoan(false);
 									return true;
@@ -242,19 +260,19 @@ public:
 							}
 							else if (num == 3) {
 								if ((*pslistItr).getLoanBook1() == gettitle) {
-									(*pslistItr).setLoanBook1(NULL);
+									(*pslistItr).setLoanBook1("");
 									(*pslistItr).setLoanNumber(2);
 									(*bklistItr).setLoan(false);
 									return true;
 								}
 								else if ((*pslistItr).getLoanBook2() == gettitle) {
-									(*pslistItr).setLoanBook2(NULL);
+									(*pslistItr).setLoanBook2("");
 									(*pslistItr).setLoanNumber(2);
 									(*bklistItr).setLoan(false);
 									return true;
 								}
 								else if ((*pslistItr).getLoanBook3() == gettitle) {
-									(*pslistItr).setLoanBook3(NULL);
+									(*pslistItr).setLoanBook3("");
 									(*pslistItr).setLoanNumber(2);
 									(*bklistItr).setLoan(false);
 									return true;
@@ -393,10 +411,10 @@ public:
 					tok = strtok_s(nullptr, "|", &context);
 				}
 				person readPerson(str_arr[0], str_arr[1], str_arr[2]);
-				readPerson.setLoanNumber(atoi(str_arr[4].c_str()));
-				readPerson.setLoanBook1(str_arr[5]);
-				readPerson.setLoanBook2(str_arr[6]);
-				readPerson.setLoanBook3(str_arr[7]);
+				readPerson.setLoanNumber(atoi(str_arr[3].c_str()));
+				readPerson.setLoanBook1(str_arr[4]);
+				readPerson.setLoanBook2(str_arr[5]);
+				readPerson.setLoanBook3(str_arr[6]);
 
 				personfileList.push_back(readPerson);
 				str_cnt = 0;
