@@ -455,7 +455,7 @@ public:
 		//return true;
 	}
 	
-	void deleteBook(int bookNumber) {
+	void deleteBook(int& bookNumber) {
 		std::cout << "-------------------------------------------------" << std::endl;
 		std::cout << "" << std::endl;
 		std::cout << "" << std::endl;

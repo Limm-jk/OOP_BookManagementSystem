@@ -2,6 +2,7 @@
 #include "Object.cpp"
 #include "Model.cpp"
 #include <stdlib.h>
+#include <windows.h>
 
 class Controller {
 private:

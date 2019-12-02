@@ -129,12 +129,11 @@ public:
 	bool bookDelete(int bookNumber) {
 		for (std::list<Book>::iterator itr = booklist.begin(); itr != booklist.end(); itr++) {
 			if ((*itr).getBookNumber() == bookNumber) {
-				booklist.erase(itr);
+				booklist.erase(itr++);
 				return true;
 			}
 		}
 		return false;
-		
 	}
 	
 	bool bookLoan(std::string id, int bookNumber) {
