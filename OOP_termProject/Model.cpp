@@ -486,6 +486,65 @@ private:
 			out.close();
 		}
 	}
+
+public:
+	void fileWrite(std::string filePath) {
+		//book
+		std::string txt = "";
+		for (std::list<Book>::iterator itr = booklist.begin(); itr != booklist.end(); itr++) {
+			std::string title = (*itr).getBookTitle();
+			std::string author = (*itr).getAuthor();
+			std::string publisher = (*itr).getPublisher();
+			std::string  bookNumber = std::to_string((*itr).getBookNumber());
+			bool beforBoolToInt = (*itr).getLoan();
+			std::string loan;
+
+			if (beforBoolToInt == true) {
+				loan = "1";
+			}
+			else {
+				loan = "0";
+			}
+
+			txt += title + "|" + author + "|" + publisher + "|" + bookNumber + "|" + loan + "\n";
+		}
+
+		std::ofstream file("booklist.txt");
+
+		file << txt;
+
+		file.close();
+
+
+		//person
+		std::string txt = "";
+		for (std::list<person>::iterator itr = personlist.begin(); itr != personlist.end(); itr++) {
+			std::string name = (*itr).getName();
+			std::string id = (*itr).getId();
+			std::string passwd = (*itr).getPasswd();
+			std::string loanNumber = std::to_string((*itr).getLoanNumber());
+			std::string loanBook1 = (*itr).getLoanBook1();
+			std::string loanBook2 = (*itr).getLoanBook2();
+			std::string loanBook3 = (*itr).getLoanBook3();
+
+			txt += name + "|" + id + "|" + passwd + "|" + loanNumber + "|" + loanBook1 + "|" + loanBook2 + "|" + loanBook3 + "\n";
+		}
+		std::ofstream personFile("personlist.txt");
+
+		personFile << txt;
+
+		personFile.close();
+	}
+
+	void fileRead() {
+		std::list<Book> fileList;
+
+		std::ifstream bookFile("booklist.txt");
+		std::ifstream personFile("personlist.txt");
+
+		
+	}
+	
 };
 
 

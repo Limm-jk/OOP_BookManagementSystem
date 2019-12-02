@@ -75,6 +75,7 @@ public:
 								view.addBook(addbookTitle, addauthor, addpublisher, addbookNumber);
 								//¸ðµ¨¿¡ addbook
 								model.bookInsert(addbookTitle, addauthor, addpublisher, addbookNumber);
+								model.bookFileWrite("a");
 							}
 							else if (scanSignal == 2) {
 								view.deleteBook(delBookNumber);
