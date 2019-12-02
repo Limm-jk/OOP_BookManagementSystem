@@ -455,7 +455,7 @@ public:
 		//return true;
 	}
 	
-	void deleteBook(int bookNumber) {
+	void deleteBook(int& bookNumber) {
 		std::cout << "-------------------------------------------------" << std::endl;
 		std::cout << "" << std::endl;
 		std::cout << "" << std::endl;
@@ -496,6 +496,46 @@ public:
 		std::cout << "" << std::endl;
 		std::cout << "" << std::endl;
 		std::cout << "잘못된 입력입니다. 다시 입력해 주세요" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "-------------------------------------------------" << std::endl;
+		std::cout << "" << std::endl;
+
+		Sleep(1000);
+	}
+	void fail() {
+		std::cout << "-------------------------------------------------" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "실패했습니다." << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "-------------------------------------------------" << std::endl;
+		std::cout << "" << std::endl;
+
+		Sleep(1000);
+	}
+	void success() {
+		std::cout << "-------------------------------------------------" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "" << std::endl;
+		std::cout << "성공했습니다." << std::endl;
 		std::cout << "" << std::endl;
 		std::cout << "" << std::endl;
 		std::cout << "" << std::endl;

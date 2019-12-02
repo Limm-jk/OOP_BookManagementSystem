@@ -2,6 +2,7 @@
 #include "Object.cpp"
 #include "Model.cpp"
 #include <stdlib.h>
+#include <windows.h>
 
 class Controller {
 private:
@@ -52,6 +53,8 @@ private:
 
 public:
 	void run() {
+		model.fileRead();
+		
 		while (1) {
 			system("cls");
 			scanSignal = 1;
@@ -74,10 +77,14 @@ public:
 								view.addBook(addbookTitle, addauthor, addpublisher, addbookNumber);
 								//모델에 addbook
 								model.bookInsert(addbookTitle, addauthor, addpublisher, addbookNumber);
+								model.fileWrite();
+								model.fileRead();
 							}
 							else if (scanSignal == 2) {
 								view.deleteBook(delBookNumber);
 								model.bookDelete(delBookNumber);
+								model.fileWrite();
+								model.fileRead();
 							}
 							else if (scanSignal == 0) {
 								//종료합니당
@@ -101,10 +108,14 @@ public:
 								view.addPerson(name, id, passwd);
 								//모델에 addbook
 								model.addPerson(name, id, passwd);
+								model.fileWrite();
+								model.fileRead();
 							}
 							else if (scanSignal == 2) {
 								view.deletePerson(delId);
 								model.personDelete(delId);
+								model.fileWrite();
+								model.fileRead();
 							}
 							else if (scanSignal == 0) {
 								//종료합니당
@@ -143,6 +154,8 @@ public:
 						view.loanBook(searchBooklist, loanNumber);
 						if (model.bookLoan(returnid, loanNumber)) {
 							//성공
+							model.fileWrite();
+							model.fileRead();
 						}
 						else {
 							//책없음
@@ -150,9 +163,11 @@ public:
 					}
 					else if (scanSignal == 2) {
 						system("cls");
-						view.returnBook(handler, returnBookNumber);
-						if (model.bookReturn(handler.getId(), returnBookNumber)) {
+						view.returnBook(model.idToPerson(returnid), returnBookNumber);
+						if (model.bookReturn(returnid, returnBookNumber)) {
 							//성공
+							model.fileWrite();
+							model.fileRead();
 						}
 						else {
 							//책없음
