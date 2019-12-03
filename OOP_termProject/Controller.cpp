@@ -76,15 +76,25 @@ public:
 								system("cls");
 								view.addBook(addbookTitle, addauthor, addpublisher, addbookNumber);
 								//모델에 addbook
-								model.bookInsert(addbookTitle, addauthor, addpublisher, addbookNumber);
-								model.fileWrite();
-								model.fileRead();
+								if (model.bookInsert(addbookTitle, addauthor, addpublisher, addbookNumber)) {
+									model.fileWrite();
+									model.fileRead();
+									view.success();
+								}
+								else {
+									view.fail();
+								}
 							}
 							else if (scanSignal == 2) {
 								view.deleteBook(delBookNumber);
-								model.bookDelete(delBookNumber);
-								model.fileWrite();
-								model.fileRead();
+								if (model.bookDelete(delBookNumber)) {
+									model.fileWrite();
+									model.fileRead();
+									view.success();
+								}
+								else {
+									view.fail();
+								}
 							}
 							else if (scanSignal == 0) {
 								//종료합니당
@@ -107,15 +117,25 @@ public:
 								system("cls");
 								view.addPerson(name, id, passwd);
 								//모델에 addbook
-								model.addPerson(name, id, passwd);
-								model.fileWrite();
-								model.fileRead();
+								if (model.addPerson(name, id, passwd)) {
+									model.fileWrite();
+									model.fileRead();
+									view.success();
+								}
+								else {
+									view.fail();
+								}
 							}
 							else if (scanSignal == 2) {
 								view.deletePerson(delId);
-								model.personDelete(delId);
-								model.fileWrite();
-								model.fileRead();
+								if (model.personDelete(delId)) {
+									model.fileWrite();
+									model.fileRead();
+									view.success();
+								}
+								else {
+									view.fail();
+								}
 							}
 							else if (scanSignal == 0) {
 								//종료합니당
@@ -154,11 +174,13 @@ public:
 						view.loanBook(searchBooklist, loanNumber);
 						if (model.bookLoan(returnid, loanNumber)) {
 							//성공
+							view.success();
 							model.fileWrite();
 							model.fileRead();
 						}
 						else {
 							//책없음
+							view.fail();
 						}
 					}
 					else if (scanSignal == 2) {
@@ -166,11 +188,13 @@ public:
 						view.returnBook(model.idToPerson(returnid), returnBookNumber);
 						if (model.bookReturn(returnid, returnBookNumber)) {
 							//성공
+							view.success();
 							model.fileWrite();
 							model.fileRead();
 						}
 						else {
 							//책없음
+							view.fail();
 						}
 						//반납메소드
 					}
