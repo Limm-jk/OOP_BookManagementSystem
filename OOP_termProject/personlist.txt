@@ -1,1 +1,2 @@
-user|user|user|2||1|1
+user|user|user|2|1|1|
+song|song|1q|0||1|
