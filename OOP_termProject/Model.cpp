@@ -142,6 +142,9 @@ public:
 		pslistItr = personlist.begin(); // 초기화 
 		while (bklistItr != booklist.end()) { 
 			if ((*bklistItr).getBookNumber() == bookNumber) { // 책이 있는지 확인
+				if ((*bklistItr).getLoan()) {
+					return false;
+				}
 				while (pslistItr != personlist.end()) { 
 					if ((*pslistItr).getId() == id) { // id 같은 사람 찾기 
 						int num = (*pslistItr).getLoanNumber();
