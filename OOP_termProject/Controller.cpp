@@ -128,6 +128,7 @@ public:
 								}
 							}
 							else if (scanSignal == 2) {
+								system("cls");
 								view.deletePerson(delId);
 								if (model.personDelete(delId)) {
 									model.fileWrite();
