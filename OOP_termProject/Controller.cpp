@@ -9,6 +9,7 @@ private:
 	View view;
 	Model model;
 	std::string SUPERUSER = "admin";
+	std::string SUPERUSERPW = "admin";
 	bool testtrue = true; // 채우기용 bool변수
 
 	//로그인
@@ -62,7 +63,7 @@ public:
 			bool login = model.loginCheck(returnid, returnpasswd);
 
 			//관리자계정일때
-			if (returnid == "admin") {
+			if (returnid == "admin" && returnpasswd == "admin") {
 				while (1) {
 					system("cls");
 					view.managePage(scanSignal);//1도서 2회원

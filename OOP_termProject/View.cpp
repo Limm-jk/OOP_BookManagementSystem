@@ -94,19 +94,32 @@ public:
 	void loanBook(std::list<Book> searchBooklist, int& bookNumber) {
 		std::list<Book>::iterator list = searchBooklist.begin();
 		std::cout << "--------------------------------------------------------------------------------\n" << std::endl;
-		std::cout << "고유번호\t제목            저자            출판사          대출여부\n" << std::endl;
-
 		while (list != searchBooklist.end()) {
+			std::cout << "고유 번호 : ";
 			std::cout << (*list).getBookNumber();
-			std::cout << "\t\t";
+			std::cout << "\t\t" << std::endl;
+
+			std::cout << "제목 : ";
 			std::cout << (*list).getBookTitle();
-			std::cout << "\t\t";
+			std::cout << "\t\t" << std::endl;
+
+			std::cout << "저자 : ";
 			std::cout << (*list).getAuthor();
-			std::cout << "\t\t";
+			std::cout << "\t\t" << std::endl;
+
+			std::cout << "출판사 : ";
 			std::cout << (*list).getPublisher();
-			std::cout << "\t\t";
-			std::cout << (*list).getLoan() << std::endl;
-			std::cout << "" << std::endl;
+			std::cout << "\t\t" << std::endl;
+
+			std::cout << "대출 여부 : ";
+			if ((*list).getLoan() == true) {
+				std::cout << "대출 불가능" << std::endl;
+			}
+			else {
+				std::cout << "대출 가능" << std::endl;
+			}
+			std::cout << "\t\t" << std::endl;
+			std::cout << "\t\t" << std::endl;
 			
 			++list; //이터레이터 증가
 		}
