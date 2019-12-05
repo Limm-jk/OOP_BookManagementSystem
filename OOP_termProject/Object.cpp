@@ -1,7 +1,26 @@
 #pragma once
 #include<string>
 
-class Book {
+//인터페이스 및 추상클래스
+class Library{
+public:
+	virtual ~Library() {}  // 가상 소멸자의 선언
+	
+	virtual std::string getAuthor() = 0;
+	virtual void setAuthor(std::string Author) = 0;
+	virtual std::string getPublisher() = 0;
+	virtual void setPublisher(std::string Publisher) = 0;
+};
+
+//인터페이스 및 추상클래스
+class People {
+public :
+	virtual void setName(std::string Name) = 0;
+	virtual std::string getName() = 0;
+};
+
+
+class Book :Library{
 private:
 	//제목
 	//저자
@@ -65,7 +84,7 @@ public:
 	}
 };
 
-class person {
+class person: People {
 private:
 	//이름
 	//아이디
