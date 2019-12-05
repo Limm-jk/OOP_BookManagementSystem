@@ -336,11 +336,18 @@ public:
 		std::cout << "" << std::endl;
 
 		std::cout << "추가할 도서의 제목을 입력해 주세요 : ";
-		std::cin >> bookTitle;
+		//std::cin >> bookTitle;
+		std::cin.clear();
+		std::cin.ignore(INT_MAX, '\n');
+		getline(std::cin, bookTitle);
 		std::cout << "추가할 도서의 작가를 입력해 주세요 : ";
-		std::cin >> author;
+		std::cin.clear();
+		std::cin.ignore(INT_MAX, '\n');
+		getline(std::cin, author);
 		std::cout << "추가할 도서의 출판사를 입력해 주세요 : ";
-		std::cin >> publisher;
+		std::cin.clear();
+		std::cin.ignore(INT_MAX, '\n');
+		getline(std::cin, publisher);
 		
 		//숫자만 입력 예외처리
 		while(1){
@@ -382,11 +389,17 @@ public:
 		std::cout << "" << std::endl;
 
 		std::cout << "추가할 회원의 이름을 입력해 주세요 : ";
-		std::cin >> name;
+		std::cin.clear();
+		std::cin.ignore(INT_MAX, '\n');
+		getline(std::cin, name);
 		std::cout << "추가할 회원의 ID를 입력해 주세요 : ";
-		std::cin >> id;
+		std::cin.clear();
+		std::cin.ignore(INT_MAX, '\n');
+		getline(std::cin, id);
 		std::cout << "추가할 회원의 비밀번호를 입력해 주세요 : ";
-		std::cin >> pwd;
+		std::cin.clear();
+		std::cin.ignore(INT_MAX, '\n');
+		getline(std::cin, pwd);
 
 		/*if (name != "" && id != "" && pwd != "") {
 			return true;
