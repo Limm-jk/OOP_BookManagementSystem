@@ -342,11 +342,11 @@ public:
 		getline(std::cin, bookTitle);
 		std::cout << "추가할 도서의 작가를 입력해 주세요 : ";
 		std::cin.clear();
-		std::cin.ignore(INT_MAX, '\n');
+		//std::cin.ignore(INT_MAX, '\n');
 		getline(std::cin, author);
 		std::cout << "추가할 도서의 출판사를 입력해 주세요 : ";
 		std::cin.clear();
-		std::cin.ignore(INT_MAX, '\n');
+		//std::cin.ignore(INT_MAX, '\n');
 		getline(std::cin, publisher);
 		
 		//숫자만 입력 예외처리
@@ -359,7 +359,7 @@ public:
 			if (!std::cin) {
 				std::cout << "도서의 책 번호는 숫자만 입력해 주세요" << std::endl;
 				std::cin.clear();
-				std::cin.ignore(INT_MAX, '\n');
+				//std::cin.ignore(INT_MAX, '\n');
 			}
 		}
 		/*
@@ -394,11 +394,11 @@ public:
 		getline(std::cin, name);
 		std::cout << "추가할 회원의 ID를 입력해 주세요 : ";
 		std::cin.clear();
-		std::cin.ignore(INT_MAX, '\n');
+		//std::cin.ignore(INT_MAX, '\n');
 		getline(std::cin, id);
 		std::cout << "추가할 회원의 비밀번호를 입력해 주세요 : ";
 		std::cin.clear();
-		std::cin.ignore(INT_MAX, '\n');
+		//std::cin.ignore(INT_MAX, '\n');
 		getline(std::cin, pwd);
 
 		/*if (name != "" && id != "" && pwd != "") {
