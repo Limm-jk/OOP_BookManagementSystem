@@ -15,6 +15,8 @@ public:
 //인터페이스 및 추상클래스
 class People {
 public :
+	virtual ~People() {}	//가상 소멸자 선언
+
 	virtual void setName(std::string Name) = 0;
 	virtual std::string getName() = 0;
 };
