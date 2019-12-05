@@ -1,3 +1,1 @@
-어린왕자|0|99|99|0
-어린왕자|tosdlzs|qrr|1|0
-dkf dkfja|kdfj dkf|dkaal ldkf|2|0
+test1|test11|test11|1|0

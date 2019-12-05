@@ -182,6 +182,7 @@ public:
 						}
 						else {
 							//Ã¥¾øÀ½
+
 							view.fail();
 						}
 					}
