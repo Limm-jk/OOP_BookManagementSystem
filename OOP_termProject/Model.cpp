@@ -421,6 +421,10 @@ public:
 
 				personfileList.push_back(readPerson);
 				str_cnt = 0;
+
+				for (int i = 0; i < 20; i++) {
+					str_arr[i] = "";
+				}
 			}
 			personlist = personfileList;
 			personFile.close();

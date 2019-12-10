@@ -94,19 +94,32 @@ public:
 	void loanBook(std::list<Book> searchBooklist, int& bookNumber) {
 		std::list<Book>::iterator list = searchBooklist.begin();
 		std::cout << "--------------------------------------------------------------------------------\n" << std::endl;
-		std::cout << "고유번호\t제목            저자            출판사          대출여부\n" << std::endl;
-
 		while (list != searchBooklist.end()) {
+			std::cout << "고유 번호 : ";
 			std::cout << (*list).getBookNumber();
-			std::cout << "\t\t";
+			std::cout << "\t\t" << std::endl;
+
+			std::cout << "제목 : ";
 			std::cout << (*list).getBookTitle();
-			std::cout << "\t\t";
+			std::cout << "\t\t" << std::endl;
+
+			std::cout << "저자 : ";
 			std::cout << (*list).getAuthor();
-			std::cout << "\t\t";
+			std::cout << "\t\t" << std::endl;
+
+			std::cout << "출판사 : ";
 			std::cout << (*list).getPublisher();
-			std::cout << "\t\t";
-			std::cout << (*list).getLoan() << std::endl;
-			std::cout << "" << std::endl;
+			std::cout << "\t\t" << std::endl;
+
+			std::cout << "대출 여부 : ";
+			if ((*list).getLoan() == true) {
+				std::cout << "대출 불가능" << std::endl;
+			}
+			else {
+				std::cout << "대출 가능" << std::endl;
+			}
+			std::cout << "\t\t" << std::endl;
+			std::cout << "\t\t" << std::endl;
 			
 			++list; //이터레이터 증가
 		}
@@ -323,11 +336,18 @@ public:
 		std::cout << "" << std::endl;
 
 		std::cout << "추가할 도서의 제목을 입력해 주세요 : ";
-		std::cin >> bookTitle;
+		//std::cin >> bookTitle;
+		std::cin.clear();
+		std::cin.ignore(INT_MAX, '\n');
+		getline(std::cin, bookTitle);
 		std::cout << "추가할 도서의 작가를 입력해 주세요 : ";
-		std::cin >> author;
+		std::cin.clear();
+		//std::cin.ignore(INT_MAX, '\n');
+		getline(std::cin, author);
 		std::cout << "추가할 도서의 출판사를 입력해 주세요 : ";
-		std::cin >> publisher;
+		std::cin.clear();
+		//std::cin.ignore(INT_MAX, '\n');
+		getline(std::cin, publisher);
 		
 		//숫자만 입력 예외처리
 		while(1){
@@ -339,7 +359,7 @@ public:
 			if (!std::cin) {
 				std::cout << "도서의 책 번호는 숫자만 입력해 주세요" << std::endl;
 				std::cin.clear();
-				std::cin.ignore(INT_MAX, '\n');
+				//std::cin.ignore(INT_MAX, '\n');
 			}
 		}
 		/*
@@ -369,11 +389,17 @@ public:
 		std::cout << "" << std::endl;
 
 		std::cout << "추가할 회원의 이름을 입력해 주세요 : ";
-		std::cin >> name;
+		std::cin.clear();
+		std::cin.ignore(INT_MAX, '\n');
+		getline(std::cin, name);
 		std::cout << "추가할 회원의 ID를 입력해 주세요 : ";
-		std::cin >> id;
+		std::cin.clear();
+		//std::cin.ignore(INT_MAX, '\n');
+		getline(std::cin, id);
 		std::cout << "추가할 회원의 비밀번호를 입력해 주세요 : ";
-		std::cin >> pwd;
+		std::cin.clear();
+		//std::cin.ignore(INT_MAX, '\n');
+		getline(std::cin, pwd);
 
 		/*if (name != "" && id != "" && pwd != "") {
 			return true;
